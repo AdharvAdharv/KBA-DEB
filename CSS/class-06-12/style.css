@@ -1,0 +1,12 @@
+img{
+    width: 400px;
+    height: 200px;
+}.box{
+    float: left;
+    width: 33%;
+    border-left: 1px solid rgb(63, 248, 63);
+    margin-left: 2px;
+    
+}p{
+    width: 400px;
+}
