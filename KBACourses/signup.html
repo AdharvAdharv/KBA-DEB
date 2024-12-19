@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+    .body{
+        background: rgb(217, 226, 217);
+        height: 600px;
+        width: 1350px;
+        padding-top: 40px;
+    }
+        .box{
+            background: #fcfafa;
+            height:530px;
+            width: 350px;
+           
+            margin-left: 475px;
+            padding-top: 15px;
+            padding-left: 0px;    
+        }
+        .signup{
+            text-align: center;
+            color:  rgb(116, 107, 197);
+        }
+        .table{
+            padding-left: 30px;
+        }
+        .input{
+            border: 1px;
+            background: #fcfafa;
+            height: 25px;
+            width: 250px;
+            border-style: solid;
+            border-radius: 4px;
+            border-color: #e2dcdc;
+ 
+            
+
+        }
+        .userdropdown{
+            height: 25px;
+            width: 250px;
+            border-radius:4px ;
+
+        }
+        .signupbutton{
+            background: rgb(116, 107, 197);
+            color: white;
+            height: 25px;
+            width: 70px;
+            border-radius:4px;
+            margin-top: 5px;
+            outline: solid;
+            border-color:rgb(116, 107, 197);
+        }
+        .lastline{
+            text-align: center;
+            padding-top: 10px;
+        }
+        .login{
+            text-decoration: none;
+            color: rgb(116, 107, 197);
+        }
+   </style>
+</head>
+<body>
+    <div class="body">
+        <div class="box">
+                <h1 class="signup">Sign Up</h1>
+   
+        <form action="">
+            <table class="table">
+                <tr>
+                    <td><h4>Name :</h4>
+                    <input class="input" type="text"  required></td>
+                </tr>
+                <tr>
+                    <td><h4>Email :</h4>
+                    <input class="input" type="email"  required></td>
+                </tr>
+                <tr>
+                    <td><h4>Password :</h4>
+                    <input class="input" type="password"  required></td>
+
+                </tr>
+                <tr>
+                    <td><h4>User</h4>
+                        
+                    <select class="userdropdown" name="User" id="">
+                        <option value="Admin">Admin</option>
+                        <option value="User">User</option>
+                    </select>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>  <input class="signupbutton" type="submit" value="Sign Up"></td>
+                </tr>
+                <tr>
+                    <td class="lastline">Already have a account ? <a class="login" href="login.html">Login</a></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+ 
+    </div>
+    
+</body>
+</html>

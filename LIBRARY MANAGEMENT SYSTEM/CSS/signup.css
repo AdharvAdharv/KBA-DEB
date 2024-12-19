@@ -1,0 +1,61 @@
+
+
+.body{
+    background: white;
+    height: 600px;
+    width: 1350px;
+    padding-top: 40px;
+}
+    .box{
+        background: rgb(192, 192, 157);
+        height:470px;
+        width: 350px;
+       
+        margin-left: 475px;
+        padding-top: 15px;
+        padding-left: 0px;    
+    }
+    .signup{
+        text-align: center;
+        color:  #991c56;
+    }
+    .table{
+        padding-left: 30px;
+    }
+    .input{
+        border: 1px;
+        background: white;
+        height: 25px;
+        width: 250px;
+        border-style: solid;
+        border-radius: 4px;
+        border-color: white;
+
+        
+
+    }
+    .userdropdown{
+        height: 25px;
+        width: 250px;
+        border-radius:4px ;
+
+    }
+    .signupbutton{
+        background: #991c56;
+        color: white;
+        height: 25px;
+        width: 70px;
+        border-radius:4px;
+        margin-top: 7px;
+        
+        border-style: solid;
+        border-color: #991c56;
+    }
+    .lastline{
+        text-align: center;
+        padding-top: 10px;
+    }
+    .login{
+        text-decoration: none;
+        color: #991c56;
+    }

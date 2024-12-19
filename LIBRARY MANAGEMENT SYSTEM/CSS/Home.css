@@ -1,0 +1,63 @@
+nav{
+    background: #991c56;
+    width: 100%;
+    height: 70px;
+    padding-left: 50px;
+    align-items: center;
+    display: flex;
+    
+
+ }body{
+    margin: auto;
+    
+    
+ }nav a{
+    text-decoration: none;
+    padding-left: 40px;
+    font-size: large;
+    font-weight: bold;
+    color: white;
+ }h1{
+    text-align: center;
+    margin-top: 100px;
+    color: #991c56;
+    text-decoration: underline;
+ 
+
+}.innerbox{
+    background: rgb(219, 217, 217);
+    width: 20%;
+    height: 550px;
+    float: left;
+    margin: 33px;
+
+}.book1{
+    width: 150px;
+    height: 200px;
+    margin: 55px 55px;
+}
+.rupees{
+    
+    font-weight: bolder;
+    font-size: large;
+    padding-left: 20px;
+    
+}.addtocart{
+    background: #991c56;
+    color: white;
+    border-radius: 5px;
+    width: 100px;
+    height: 28px;
+    margin-left: 50px;
+    border-color: #991c56;
+    border-style: solid;
+   
+}.description{
+    color: #991c56;
+    margin-top: auto;
+}.descriptionbox{
+    padding-left: 20px;
+    margin-top: 20px;
+}
+    
+   
