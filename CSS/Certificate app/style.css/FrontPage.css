@@ -1,0 +1,36 @@
+nav{
+
+    
+    display: flex;
+    justify-content: end;
+}nav a{
+    text-decoration: none;
+    margin-right: 30px;
+    color: black;
+    cursor: grab;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}nav a:hover{
+    background: rgb(33, 180, 180);
+    transform: scale(1.05);
+    height: 10px;
+    width: 50px;
+}
+.body{
+   
+   justify-items: center;
+
+}form{
+    margin-top: 60px;
+}.input{
+    border-style: solid;
+    border-color: rgb(33, 180, 180);
+    font-size: medium;
+
+}.submit{
+    background: rgb(33, 180, 180);
+    color: wheat;
+    border-color: rgb(33, 180, 180);
+    border-style: solid;
+    font-size: medium;
+   
+}

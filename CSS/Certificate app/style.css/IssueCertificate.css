@@ -1,0 +1,33 @@
+.links{
+    display: flex;
+    
+    margin-left: 900px;
+}nav{
+    
+ 
+    display: flex;
+}nav a{
+    text-decoration: none;
+    padding-right: 30px;
+    color: black;
+
+}nav a:hover{
+    background: rgb(33, 180, 180);
+   
+}.body{
+    padding-left: 200px;
+}.mainheading{
+    font-size: x-large;
+}.input{
+    width: 350px;
+    height: 25px;
+}.input1{
+    width: 345px;
+    height: 20px;
+}.submit{
+    margin-top: 30px;
+    background: aqua;
+    height: 25px;
+    border-color: aqua;
+    border-radius: 5px;
+}
