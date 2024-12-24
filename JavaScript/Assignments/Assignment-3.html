@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment3</title>
+</head>
+<body>
+    <script>
+        document.write("Write a JS program to print natural numbers from 10 to 50 using while loop")
+
+        let a=10;
+        let b=0;
+        let count=0;
+        while(a<=50){
+        document.write(",",a)
+        b=a+b;
+        count++;
+        a++;
+        }
+        document.write("<br>sum =",b,"<br>average=",b/count)
+        
+
+       document.write("<br><br>Write a JS program to print cube of numbers from 10 to 30<br>")
+       let c=10;
+       while(c<=30){
+           d=(c*c*c)
+        c++;
+        document.write(d,",")
+       }
+
+       document.write("<br><br>Write a JS program to print multiplication table for a given number<br>")
+       e=2;
+       f=1;
+       while(f<=10){
+           document.write(f,"*",e,"=",f*e,"<br>")
+           f++;
+       }
+
+       document.write("<br><br>Write a JS program to check whether the given string is palindrome or not<br>")
+       let j= "abced";
+        let reverse = "";
+
+         for (let i = j.length - 1; i >= 0; i--) {
+            reverse += j[i];
+}
+
+if (j===reverse) {
+    document.write(`<br>The given string "${j}" is Palindrome`);
+} else {
+    document.write(`<br>The given string "${j}" is Not a Palindrome`);
+}
+
+       document.write("<br><br>Write a JS program to print reverse of a number<br>")
+       let h="567";
+       let k="";
+       for(i=h.length-1;i>=0;i--){
+        k+=h[i]
+       }
+       document.write(k)
+
+       document.write("<br><br>Write a JS program to print the patterns<br>")
+       
+       for(let l=25;l<=50;l=l+5){
+        
+        document.write(",",l)
+       }
+        document.write("<br>")
+
+
+        for(let m=8;m<=20;m=m+2){
+        document.write(",",m)
+        }
+
+        document.write("<br>")
+        
+        let n=1;
+        for(n=1;n<=4;n++){
+            p=10**n;
+            document.write(",",p)
+
+        }
+    </script>
+    
+</body>
+</html>

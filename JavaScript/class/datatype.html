@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="hello"></p>
+    <script>
+        let a=30;
+        let b="dell"
+        let c= true
+        let d= null
+
+        document.write("the value of a is :",a)
+        document.write("<br>the value of b :",b)
+        document.write("<br>the value of c :",c)
+        document.write("<br>the value of d :",d)
+        
+        document.write("<br>the type of a is ", typeof a)
+        document.write("<br>the type of b is :", typeof b)
+        document.write("<br>the type of c :" ,typeof c)
+        document.write("<br>the type of d : " ,typeof d)
+
+        document.getElementById("hello").innerHTML=" <br>25 Years 7 months"
+
+         let h=10;
+         document.write(" <br><br>the value of h=" ,h) 
+         h=20;
+         document.write(" <br>the value of h after reinitialising is",h)        
+
+        const m=5;
+        document.write(" <br>the value of m is :",m)
+        
+        {
+            const m=10; //re initialization is not possible redeclaration only possible
+            document.write("<br> the value of m is :",m)
+             h=55;
+            document.write(" <br>the value of h in subblock is :",h ,"<br><br>")
+        }
+
+       s=a<d
+
+        document.write("reult of s =",s)
+
+        x=a++;
+        document.write(`<br>the value of x is ${x} and value of a is :`,a)
+
+        y=++h;
+        document.write(`<br> the value of y is = ${y} and value of b is :`,h)
+
+        
+    </script>
+    
+</body>
+</html>

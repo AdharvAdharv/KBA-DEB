@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Add Book</title>
+</head>
+<body class="bg-red-100">
+    <div>
+        <nav class="w-[1520px] h-[100px] bg-red-900 flex justify-between  ">
+            <img class="w-[110px] h-[100px] ml-12" src="Assets/logo.webp" alt="">
+            <div class="text-white font-black text-2xl my-auto">
+            <a class="mr-[50px]" href="HomePage.html">Home</a>
+            <a class="mr-[50px]" href="Books.html">Books</a>
+            <a class="mr-[50px]" href="Cart.html">Cart</a>
+            <a class="mr-[50px]" href="Admin-AddBook.html">Add book</a>
+            <a class="mr-[150px]" href="Login.html">Logout</a>
+           </div>
+        </nav>
+         <div class="flex justify-center">
+         <!-- box -->
+         <div class="bg-white w-[590px] h-[570px] mt-9 font-sans font-semibold  pt-6 pl-12 rounded">
+            <p class="text-center text-3xl text-red-900 font-bold font-serif">Add Book</p>
+            <label for="Book Name">Book Name</label>
+            <input class="w-[500px] h-[28px] rounded mt-2 mb-5 pl-3 ring ring-black" type="text" >
+            <label for="Author name"> Author Name </label>
+            <input class="w-[500px] h-[28px] rounded mt-2 mb-5 pl-3 ring ring-black" type="text" >
+            
+            <label for="booktype"> Genre</label>
+             <select class="w-[500px] h-[28px] rounded mt-2 mb-5 pl-3 font-normal ring ring-black    " name="" id="">
+                <option value="course1">Drama</option>
+                <option value="">Fiction</option>
+             </select>
+             <label for="">Description</label>
+             <textarea class="mt-2 mb-5 ring ring-black rounded" name="" id="" cols="49" rows="3"  ></textarea>
+              <br>
+             <label for="price">Price</label><br>
+             <input class="w-[500px] h-[28px] rounded mt-2 mb-5 pl-3 ring ring-black" type="text" >
+
+            
+
+             <button class="bg-red-900 w-[500px] h-[35px] text-white rounded mt-2 mb-7">Add Book</button>
+        </div>
+        </div>
+    </div>
+</body>
+</html>
