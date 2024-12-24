@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         let a=15, b=7 ,c=50;
+         if(a<b)
+         {
+            document.write(`${a} is smaller`)
+         }else{
+            document.write(`${b} is smaller`)
+         }
+document.write("<br>")
+
+//  else if
+
+         if(a<b&&a<c)
+         {
+            document.write(`a is smallest number`)
+
+         }else if(b<a&&b<c)
+         {
+             document.write("b is the smallest number")
+
+         }else{
+            document.write("c is the smallest number")
+         }
+
+         document.write("<br>")
+
+         //check the given numbers are equal or not
+
+         if(a==c)
+         {
+            document.write(`${a} &${c} are equal`)
+         }else{
+            document.write(`${a}&${c} are not equal`)
+         }
+
+         document.write("<br>") 
+         //switch
+         let x="%";
+         switch (x)
+         {
+            case '+':{
+               let z;
+               z=a+b;
+               document.write("the sum is ",z);
+               break;
+            }case '-':{
+               document.write("the difference is",a-b);
+               break;
+            }case '*':{
+               document.write("the result of multiplication",a*b);
+               break;
+            }case '/':{
+               document.write("the result of division",a/b);
+               break;
+            }default:{
+               document.write("enter valid operator")
+            }
+         }
+    </script>
+    
+</body>
+</html>

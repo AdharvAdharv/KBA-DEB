@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <script>
+        // change the 3rd value in the Array
+        let a =[1,2,3,4,5,];
+        document.write(a)
+        a[2]=10;
+        document.write("<br> after changind 3rd element value of 3rd element:")
+        document.write(a)
+        
+        // change the 3rd value in the Array using for loop
+        document.write("<br>")
+        
+        for(let i=0;i<=5;i++){
+            if(i==2){
+                a[i]=20;
+            }
+            
+        }
+        document.write(a)
+
+        document.write("<br>")
+    document.write("<br>add 2 with every element in array<br>")
+        for(let i=0;i<=4;i++){
+            a[i]=a[i]+2;
+        }
+        document.write(a,"<br>")
+
+       let c=[];
+        for(let b=0;b<10;b++){
+           c[b]=b+1;
+        }
+        document.write(c)
+
+
+    </script>
+    
+</body>
+</html>
