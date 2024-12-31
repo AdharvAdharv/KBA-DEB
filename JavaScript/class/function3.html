@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Enter side legth of square :</label>
+    <input type="text" id="side">
+    <button onclick="result()">Area</button>
+    <p id="print"></p>
+    
+    <script>
+        function result(){
+            const value=document.getElementById("side").value;
+            const area=value*value;
+            document.getElementById("print").innerHTML=area;
+
+        }
+    </script>
+</body>
+</html>
