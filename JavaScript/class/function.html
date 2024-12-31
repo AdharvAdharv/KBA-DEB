@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+</head>
+<body>
+    <script>
+        // fing average using function
+        function average()
+        {
+            let a=10,b=20;
+            const sum=a+b;
+            const avg =sum/2;
+
+            
+            document.write('average of 2 number:',avg)
+        }
+        average();
+
+        // finding sum passing value in function
+        
+document.write("<br>")
+        function sum(a,b)
+        {
+                
+            const sum1=a+b;
+            document.write('sum of 2 numbers:',sum1);
+        }
+        let x=30;
+        let y=10;
+        sum (x,y);
+        
+document.write("<br><br><br>write a program to calculate area of circle using function<br>");
+
+       function areaofcircle(r1,pi1)
+       {
+           area=pi1*(r1**2)
+           return area
+       }
+       let r=5,pi=3.14;
+       areaofcircle(r,pi)
+       document.write('Area of a circle:',area)
+       
+       const result=areaofcircle(r,pi)
+       document.write('<br>Area of a circle using return value :',result)
+    </script>
+    
+</body>
+</html>

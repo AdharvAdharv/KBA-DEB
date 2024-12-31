@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity-4</title>
+</head>
+<body>
+    <script>
+        document.write("Pattern 1<br>")
+        // pattern 1
+
+        for(let i=1;i<=3;i++){
+            document.write("<br>")
+            for(j=1;j<=i;j++){
+
+                document.write(i)
+            }
+        }
+
+        document.write("<br><br>pattern 2<br>")
+        for(i=1;i<=3;i++){
+            document.write("<br>")
+            for(j=1;j<=3;j++){
+             document.write(" 2 ")
+            }
+        }
+
+        document.write("<br><br>Pattern 3<br>")
+        for(i=1;i<=3;i++){
+            document.write("<br>")
+            for(j=3;j>=i;j--){
+                document.write(i)
+
+            }
+        }
+
+        document.write("<br><br>JS program to find the sum of the elements in array.<br>")
+
+        let a =[5,7,2,1]
+        let sum=0;
+        for(let i=0;i<a.length;i++){
+            sum=sum+a[i]
+        }
+         document.write("sum of array : ",sum)
+
+         document.write("<br><br>JS program to store & print even numbers upto 20 in an array <br>")
+          let b=[]
+         for(i=1;i<=20;i++){
+            if(i%2==0){
+                b=b+i;
+
+            }
+        }
+        document.write(b)
+
+
+        document.write("<br><br>JS program to check whether a number is in the array and if present print the location<br>")
+         let c=[9,8,7,6,5]
+         let num=6;
+         flag=0;
+
+         for(i=1;i<=c.length;i++){
+           if(c[i]==num){
+              document.write("the present location of number is :",i+1)
+              flag=1;
+            
+              if(flag==0){
+            document.write("number is not in the array")
+            
+           }
+        }
+         }
+
+         document.write("<br><br>JS program to remove an element present in a specific location<br>")
+         let d=[9,8,7]
+         let posi=2;
+         let e=[]
+         for(let i=0;i<d.length;i++){
+            if(i!=posi-1){
+                e=e+d[i]
+            }
+         }
+         document.write(e)
+
+         document.write("<br><br> JS program to copy an element in an aaray to another array<br>")
+          let f=[1,2,3,4,5]
+          let g=[]
+          for(let i=0;i<f.length;i++){
+            g[i]=f[i]
+          }
+         document.write(g)
+        
+
+
+        
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity-5</title>
+</head>
+<body>
+    <p id="para"></p>
+      <div id="cinema-list"></div>
+    <script>
+        let element1=document.createElement("p");
+        element1.textContent="iam a blockchain developer";
+        document.getElementById("para").appendChild(element1);
+
+       
+          
+          const cinemas = ["Naran", "Lucifer", "Avesham"];
+         const container = document.getElementById('cinema-list');
+        const ul = document.createElement('ul');
+
+
+      for (let cinema of cinemas) {
+        const li = document.createElement('li'); 
+        li.textContent = cinema; 
+       ul.appendChild(li); 
+}
+container.appendChild(ul);
+
+    </script>
+    
+</body>
+</html>
