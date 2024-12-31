@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity-6</title>
+</head>
+<body>
+    <script>
+        // question 1
+        document.write("JS program to read array a=[20,25,30,35,40,45] and divide the array in to two seperate arrays having equal number of elements.<br>")
+        let a=[20,25,30,35,40,45]
+        document.write('Oringinal array : ',a)
+        let midpoint = (a.length / 2);
+
+           let array1 = a.slice(0, midpoint);
+           let array2 = a.slice(midpoint);
+
+           document.write('<br>the first array :',array1)
+           document.write('<br>the second array : ',array2)
+
+        //    question 2
+        document.write("<br><br>JS program to concatinate two arrays a=[1,2,3,4] & b=[5,6,7,8] into a single array<br>")
+        a=[1,2,3,4];
+        b=[,5,6,7,8]
+        let c=[]
+        c=a+b;
+        document.write(c)
+        // second method
+        // let d=a.concat(b);
+        // document.write(d)
+
+        
+        // question 3
+
+        document.write("<br><br><br>JS program to read an array and sort in ascending and descending order<br>")
+        a=[6,5,7,8,2]
+        
+        for(i=0;i<a.length-1;i++){
+            for(j=(i+1);j<a.length;j++){
+               if( a[i]>a[j]){
+                let temp=a[j]
+                a[j]=a[i]
+                a[i]=temp
+
+               }
+            }
+        }document.write('array after ascending order :',a)
+        
+        for(i=0;i<a.length-1;i++){
+            for(j=i+1;j<a.length;j++){
+                if(a[i]<a[j]){
+                    temp=a[i]
+                    a[i]=a[j]
+                    a[j]=temp
+                }
+            }
+        }   document.write('<br>array after descending order :',a)
+        
+        // question 4
+        document.write('<br><br><br>Write a program to read the array [1,6,7,8,2,3,4,2,2].Find the occurance of 2 in this array.<br>')
+
+        a=[1,6,7,8,2,3,4,2,2]
+        count=0
+        for(z of a){
+            if(z==2){
+                count++;
+            }
+        }document.write(count)
+    </script>
+    
+</body>
+</html>

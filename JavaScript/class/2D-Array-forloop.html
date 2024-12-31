@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D array for loop</title>
+</head>
+<body>
+    <script>
+     let a=[[],[],[]];
+     b=0;
+     sum=0;
+     for (i=0;i<3;i++){
+         document.write("<br>");
+         for(j=0;j<3;j++){
+            b=b+1;
+            a[i][j]=b;
+            sum=sum+b;
+            document.write(a[i] [j])
+        }
+     }    document.write("<br>sum of the array:",sum)
+       
+
+     
+     let c=[2,3,4,5]
+     for(y in c ){
+        c[y]=c[y]+2;
+     }
+     document.write("<br>after adding 2 to each element of the array:",c)
+    
+    // sum of the elements using "for of"
+    
+
+    let d=[2,3,4,5];
+    document.write(d)
+    let sum1 =0;
+    for(x of d){
+        sum1=sum1+x;}
+        document.write("<br>sum of the array using for of:",sum1)
+    
+    let e=[3,4,5,6]
+    f=[]
+    for(x of e){
+        if(x!=3){
+            f.push(x)
+        }
+    }document.write("<br><br>array after copying without 1 value:",f)
+     
+
+
+    // check the given letter is in the array or not
+
+     let g="america";
+     let checker="z";
+      flag=0;
+     document.write("<br><br> check the given letter is in the array or not<br>")
+     for(h of g){
+        if (h==checker){
+            document.write("Element found");
+            flag=1;
+            break;
+             }
+    }
+    if(flag==0) {
+            document.write("Element not found");
+            }
+        
+
+
+    
+    </script>
+         
+</body>
+</html>
