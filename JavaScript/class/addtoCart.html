@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add to Cart</title>
+</head>
+<body> 
+    <div style="display:flex;">
+        <div>
+            <h3>item1</h3>
+            <input type="number" id="fquantity1" placeholder="Quantity">
+            <p>Price: 2000</span></p>
+            <button onclick="addToCart('item1', 2000, 'fquantity1')">Add to Cart</button>
+        </div>
+        <div>
+            <h3>item2</h3>
+            <input type="number" id="fquantity2" placeholder="Quantity">
+            <p>Price:5000</p>
+            <button onclick="addToCart('item2', 5000, 'fquantity2')">Add to Cart</button>
+        </div>
+        <div>
+            <h3>item3</h3>
+            <input type="number" id="fquantity3" placeholder="Quantity">
+            <p>Price: 4000</p>
+            <button onclick="addToCart('item3', 4000, 'fquantity3')">Add to Cart</button>
+        </div>
+    </div>
+    <br><br>
+    <button onclick="checkout()">Checkout</button>
+
+    <script>
+        // Array to store cart items
+        const cart = [];
+
+        // Function to add items to the cart
+        function addToCart(itemName, price, quantityId) {
+            const quantity = (document.getElementById(quantityId).value);
+
+           
+
+            // Add the item details to the cart
+            cart.push({ itemName, price, quantity });
+          
+            console.log(itemName,'added to cart');
+            console.log(price);
+            
+            
+        }
+
+        // Function to calculate total price and display it on checkout
+        function checkout() {
+           
+
+            let totalPrice = 0; 
+            cart.forEach(item => {
+                totalPrice += item.price * item.quantity;
+                console.log(totalPrice)
+            });
+
+            document.getElementById("print").innerHTML=(`Total Price: ₹${totalPrice}`);
+        }
+    </script>
+    <p id="print"></p>
+</body>
+</html>

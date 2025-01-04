@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+<body>
+    <script>
+        const student1={
+            fname:"Adharv",
+            lname:"Achu",
+            phone:6238394196
+        };
+        const student2={
+            fname:"Anjitha",
+            lname:"pp",
+            phone:6238394196
+        };
+        const student3={
+            fname:"Vignesh",
+            lname:"Raju",
+            phone:34343254243
+        };
+        const student4={
+            fname:"Sarath",
+            lname:"Balan",
+            phone:12345667,
+             address:{
+                Housename:"Adakkalam",
+                HOuseNO:"872/21",
+                Place:"calicut"
+
+            }
+            
+        };
+
+        document.write("The ph no of student:",student1.phone)
+        document.write("<br>name of 2nd student: ",student2.fname)
+        // adding a new property to  student 3
+
+        student3.class="V 5"
+        document.write( '<br>class  of student Vignesh : ',student3.class)
+        document.write('<br>House name of sarath:',student4.address.Housename)
+       
+        // printing a string in console
+        console.log(student1)
+
+        // convert object in to array
+        const array=Object.values(student3);
+        console.log('object after converting to an array',array)
+
+        // convert array into string 
+        const str=JSON.stringify(student3)
+        console.log('object  after converting to string',str)
+
+        // convert string  into Object
+        const JSONF=JSON.parse(str)
+        console.log('string after converting to object',JSONF)
+        
+    </script>
+    
+</body>
+</html>
