@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object 3</title>
+</head>
+<body>
+    <script>
+        const person =new Object();
+        person.fname="Richard";
+        person.lname="Branson";
+        person.hobby = "Driving";
+        person.basicpay=30000;
+        person.TA=5000;
+        person.BA=1000;
+        
+
+        person.getdetails = function(){
+            
+            return `Person Name:${person.fname+person.lname}<br> person salary :${person.basicpay+person.TA+person.BA}`
+        }
+        
+            document.write(person.getdetails())
+    
+        </script>
+    
+</body>
+</html>

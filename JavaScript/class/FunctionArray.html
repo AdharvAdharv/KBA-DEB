@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // add 2 each to the array value and copy in to a second array and print
+        let a=[8,6,4,2];
+        let b=[];
+        a.forEach(function(y){
+             b.push(y+2)
+             
+            })
+            document.write('New array: ',b)
+
+        
+        //  anonymous function
+        let sum=function(a,b){
+            return a+b;
+        }   
+           document.write("<br><br>The sum is :",sum(5,10));
+ 
+        
+        //  arrow function
+        let sum1=(a,b)=>{
+            return a+b;
+        }       
+        document.write('<br><br> The sum using arrow function :',sum1(30,10))
+
+
+
+
+           //    for each using arrow function 
+
+        a=[1,2,3,4,5]
+        b=[]
+        a.forEach((x)=>{
+            x=x+2;
+            b.push(x)
+        })
+        document.write('<br><br>array after adding 2 to each element using arrow function :',b)
+
+
+        
+    </script>
+    
+</body>
+</html>

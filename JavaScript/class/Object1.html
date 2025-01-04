@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p  id="print"></p>
+    <label >Name :</label>
+    <input type="text" id="name">
+    <label for="">Class :</label>
+    <input type="text" id="Class">
+    <button onclick="Generate()">Generate ID</button>
+
+
+    <script>
+        function Generate(){
+              const Name1=document.getElementById("name").value;
+              const class1=document.getElementById("Class").value;
+            const student={
+                fname:Name1,
+                class2:class1
+        }
+            document.getElementById("print").innerHTML=(`School <br> Name:${student.fname}<br>Class:${student.class2}`)
+        }
+    </script>
+
+    
+    
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Activity-7</title>
+    </head>
+    <body>
+        
+        <!-- HTML page containing an input tab to enter temperature in celsius and on a button click, it should be converted to fahreinheit -->
+        
+
+    <label >Enter temperature in  celcius : </label>
+    <input type="tel" id="celcius">
+    <button onclick="convert()">Submit</button>
+    
+    <script>
+        function convert(){
+            const temperature=document.getElementById("celcius").value;
+            const faranheat=(temperature * 9/5) + 32;
+        document.getElementById("print").innerHTML=faranheat
+    }
+   </script>
+   <br><br><br>
+
+<!-- HTML page to read "name, date-of-birth" and diaplay this in format of id card on clicking "generate ID" button. -->
+
+<label for="">Name:</label>
+   <input type="text" id="name">
+   <label for="">DOB :</label>
+   <input type="date" id="dob">
+   <button onclick="generateid()">Generate ID</button>
+   <br><br>
+
+   <div style="border:solid;">
+    <H1>CHSS Chakkalakkal</H1>
+    <label>Name : <span id="sname"></span></label>
+    <br>
+    <label >DOB : <span id="sdob"></span></label>
+    
+</div>
+<p id="print"></p>
+
+   <script>
+    function generateid(){
+    const name1=document.getElementById("name").value;
+    const dob1=document.getElementById("dob").value;
+    const student={
+        name2:name1,
+        dob2:dob1
+
+    }
+    document.getElementById("sname").innerHTML=student.name2;
+    document.getElementById("sdob").innerHTML=student.dob2
+    
+}
+   </script>
+   <br><br><br>
+   <!-- HTML to read a number and on clicking button find the square of the number. -->
+
+ <p>HTML to read a number and on clicking button find the square of the number. </p>
+ <label >Enter number:</label>
+ <input type="text" id="number">
+ <button onclick="findsquare()">Find Square</button>
+ 
+ <script>
+     function findsquare(){
+        const num=document.getElementById("number").value;
+        const square=num*num;
+        document.getElementById("print").innerHTML=square
+        
+    }
+    
+    </script>
+    <p id="print"></p>
+
+    <!-- Html page to enter names of fruits and insert the entered name to array and 
+     there is a dropdown and on selecting the index from drop down, display the fruit on the index. -->
+
+<br><br><br>
+   <P>Html page to enter names of fruits and insert the entered name to array and there is a dropdown and on selecting the index from drop down, display the fruit on the index.
+       </P>
+       <label >Fruit Name:</label>
+       <input type="text" id="fruit">
+       <button onclick="addfruit()">Enter</button>
+       <br><br> 
+
+       <label >select the index:</label>
+       <select name="" id="fruitDropdown" onchange="displayFruit()">
+        <option value="">--Select Index--   </option>
+       </select>
+
+       <div id="output">
+       
+        <p>Selected Fruit: <span id="selectedFruit">None</span></p>
+    </div>
+
+
+    <script>
+        let array=[]
+        function addfruit(){
+           let fvalue=document.getElementById("fruit").value;
+           array.push(fvalue)
+           document.getElementById("fruit").value="";
+           
+           document.getElementById("print").innerText=array
+           updateDropdown()
+        }
+        function updateDropdown() {
+    const dropdown = document.getElementById("fruitDropdown");
+    dropdown.innerHTML = '<option value="">--Select Index--</option>'; // Reset dropdown
+    dropdown.innerHTML += array.map((_, index) => `<option value="${index}">${index}</option>`).join('');
+}
+
+       // Function to display the selected fruit
+       function displayFruit() {
+            const index = document.getElementById("fruitDropdown").value;
+            const output = document.getElementById("selectedFruit");
+            if (index) {
+                output.textContent = array[index];
+            } else {
+                output.textContent = "None";
+            }
+        }
+
+        </script>
+               
+    
+
+
+</body>
+</html>
