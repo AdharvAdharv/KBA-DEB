@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity-5-2</title>
+</head>
+<body>
+
+    <script>
+// Write a JavaScript program to check whether a given positive number is a multiple of 3 or 7.
+     document.write("Write a JavaScript program to check whether a given positive number is a multiple of 3 or 7.<br>")
+    const num=6;
+    if(num>0){
+        if(num % 3==0 || num % 7 ==0){
+            document.write("The given number is multiple of 3 or 7")
+        }else{
+            document.write("The given Number is not multiple of 3 or 7")
+        }
+     
+    }else{
+        document.write("Enter a positive Number")
+    }
+
+//  Write a JavaScript conditional statement to find the sign of the product of three numbers. Display with the specified sign.
+
+     document.write("<br><br>Write a JavaScript conditional statement to find the sign of the product of three numbers. Display with the specified sign.<br>")
+     const a=56;
+     const b=-64;
+     const c=80;
+     const result=a*b*c;
+      if(result>0){
+        document.write("The sign of the producct is  :+")
+      }else if(result<0){
+        document.write("The sign of the product is : -")
+      }else{
+        document.write("The number is zero")
+      }
+
+// Write a program using switch case to check the CGPA on given condition.
+
+     document.write("<br><br>Write a program using switch case to check the CGPA on given condition.<br>")
+
+     let x=10;
+     switch (x){
+        case 7 :{
+            document.write("You got 7 CGPA")
+            break;
+        }case 8:{
+            document.write("You got 8 CGPA")
+            break;
+        }case 10 :{
+            document.write("You got 10 CGPA")
+            break;
+        }default :{
+            document.write("Invalid input")
+        }
+     }
+//  Write a program to print the month name by given number using switch
+    document.write("<br><br>Write a program to print the month name by given number using switch<br>")
+      const month=7;
+      switch (month){
+        case 1 :{
+            document.write("January");
+            break;
+        }case 2 :{
+            document.write("February");
+            break;
+        }case 3:{
+            document.write("March");
+            break;
+        }case 4 :{
+            document.write("April");
+            break;
+        }case 5 :{
+            document.write("May")
+            break;
+        }case 6 :{
+            document.write("June")
+            break;
+        }case 7 :{
+            document.write("July")
+            break;
+        }case 8 :{
+            document.write("August")
+            break;
+        }case 9 :{
+            document.write("September")
+            break;
+        }case 10 :{
+            document.write("October")
+            break;
+        }case 11 :{
+            document.write("November")
+            break;
+        }case 12 :{
+            document.write("December")
+            break;
+        }default :{
+            document.write("Invalid Input")
+        }
+      }
+
+// Write a program to read temperature in centigrade and display a suitable message according to the temperature state      
+
+     document.write("<br><br>Write a program to read temperature in centigrade and display a suitable message according to the temperature state<br>")
+     
+     temperature=-4;
+      if(temperature<0){
+        document.write("Freezing weather")
+
+      }else if(temperature>=0 && temperature<=10){
+        document.write("Very cold weather")
+      }else if(temperature>11 && temperature<21){
+        document.write("Cold weather");
+
+      }else if(temperature>=21&&temperature<30){
+        document.write("Normal temperature")
+      }else if(temperature>=30&& temperature<=39){
+        document.write("Its hot")
+      }else {
+        document.write("Its very hot")
+      }
+     </script>
+    
+</body>
+</html>
