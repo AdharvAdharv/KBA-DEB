@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Map concepts</title>
+    </head>
+    <body>
+
+
+    <h2>Map Methods</h2>
+    <h3>Map Operations</h3>
+    <button onclick="mapMethod()">Map Methods</button>
+    <div id="get"></div>   
+    <div id="delete"></div>
+    <div id="has"> </div>
+    <div id="join"></div>
+    <div id="clear"></div>
+    <div id="size"></div>
+    
+    <script>
+        function mapMethod(){
+        const mymap=new Map();
+        mymap.set("name","Adahrv");
+        mymap.set("age",22);
+        mymap.set("Student",true);
+        mymap.set("Role",["Admin","User"])
+
+        console.log(mymap)
+        console.log(mymap.get("Student"))
+    //    to get name in the mymap
+        document.getElementById("get").innerHTML="Name:"+mymap.get("name");
+        
+        // to delete a data in mymap
+        document.getElementById("delete").innerHTML="Age Deleted :"+mymap.delete("age");
+        
+        // to check the key is there
+        document.getElementById("has").innerHTML="After removing age :"+mymap.has("age");
+
+        // to print like array
+        let roles=mymap.get("Role");
+        document.getElementById("join").innerHTML=roles.join("&");
+
+        // to delete the map
+        mymap.clear();
+        document.getElementById("clear").innerHTML="After removing myapp:"+mymap
+        console.log('After removing mymapp :',mymap)
+        document.getElementById("size").innerHTML="Size of myapp After removing :"+mymap.size;
+        }  
+        </script>
+
+
+<!-- // storing map in array  -->
+
+      <h3>Map storing in Array</h3>
+      <button onclick="show()">Show</button>
+      <p id="get1"></p>
+      <p id="output"></p>
+      
+      <script>
+        function show(){
+        const mymap1=new Map([
+            ["name","Arunima"],
+            ["Age",19],
+            ['student',true],
+            ["Role",['Admin','User']]
+        ]);
+        document.getElementById("get1").innerHTML='Name:'+mymap1.get('name')
+        console.log(mymap1)
+          }
+
+          const mymap1=new Map([
+            ["name","Arunima"],
+            ["Age",19],
+            ['student',true],
+            ["Role",['Admin','User']]
+        ]);
+
+          let output='';
+          mymap1.forEach((value,key) => {
+
+            //   to checkif the value array or not
+            if(Array.isArray(value)) {
+                output += key +'='+value.join(' and ') +'<br>';
+    
+            }else{
+
+            output += key +'='+value +'<br>';
+            }
+          });
+          document.getElementById("output").innerHTML=output;
+
+        </script>
+       
+</body>
+</html>

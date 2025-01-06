@@ -35,7 +35,7 @@
 
         // Function to add items to the cart
         function addToCart(itemName, price, quantityId) {
-            const quantity = (document.getElementById(quantityId).value);
+            const quantity = document.getElementById(quantityId).value;
 
            
 
@@ -54,7 +54,7 @@
 
             let totalPrice = 0; 
             cart.forEach(item => {
-                totalPrice += item.price * item.quantity;
+                totalPrice +=( item .price * item.quantity);
                 console.log(totalPrice)
             });
 
