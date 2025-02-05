@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity-9</title>
+</head>
+<body>
+    <h1>AddToCart</h1>
+    <br><br> 
+    <h3>Product 1</h3>
+    <p>Price $500</p>
+    <button onclick="Addtocart(`Product 1`,500)">Add to Cart</button>
+
+   <br><br><br>
+    <h3>Product 2</h3>
+    <p>Price $400</p>
+    <button onclick="Addtocart(`Product 2`,400)">Add to Cart</button>
+    
+    
+    <br><br>
+    <p id="printProduct"></p>
+    <p id="printPrice"></p>
+    <br><br><br>
+    <button onclick="checkout()">Checkout</button>
+    <p id="printTotalPrice"></p>
+    
+    <script>
+        let mymap= new Map([])
+       function Addtocart(Product,Price){
+        mymap= new Map([
+            ["Name",Product],
+            ["Price",Price]
+        ])
+        document.getElementById("printProduct").innerHTML=mymap.get(`Name`)
+        document.getElementById("printPrice").innerHTML=mymap.get(`Price`)
+        console.log(mymap);
+        return (Price);
+
+       }  
+       
+       function checkout(){
+        
+        let totalPrice=0;
+        mymap.forEach(x=>{
+            totalPrice=mymap.get("Price")
+            document.getElementById("printTotalPrice").innerHTML=totalPrice
+            
+        })
+
+       }
+      
+       
+    </script>
+</body>
+</html>

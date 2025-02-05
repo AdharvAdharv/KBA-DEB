@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundraising 2</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body  class="bg-stone-400 flex justify-center">
+    
+       <!-- div for back button  -->
+        <div class="  flex place-items-center mr-[40px] " >
+            <a href="Fundraising 1.html">
+            <img class="w-[70px]" src="./Assets/left arrow1.svg" alt="image">
+            </a>
+             <p class="text-xl">Back</p>
+        </div>
+        
+    
+     <!-- box -->
+     <div>
+          <div class="bg-white w-[590px] h-  mt-[70px]  pt-6 pl-12 rounded">
+        
+        <p class="text-center text-3xl text-red-900 font-serif mb-[40px] ">Tell us about Patient</p>
+       
+        <label class=" font-sans font-semibold" > Patient Name</label>
+        <input class="w-[500px] h-[28px] rounded mt-2 mb-5 pl-3 ring ring-black" type="text" placeholder="Should be minimum rs.2000" >
+       
+        <label class="mt-[60px] font-sans font-semibold">Patient Age</label>
+        <input class="w-[500px] h-[28px] rounded mt-2 mb-5 pl-3 ring ring-black" type="number"  >
+
+        <label class="mt-[60px] font-sans font-semibold">Medical Condition</label>
+        <input class="w-[500px] h-[28px] rounded mt-2 mb-5 pl-3 ring ring-black" type="text"  >
+
+            
+        </select>
+        <br>
+        <label class="mt-[60px] font-sans font-semibold"> Hospital Status</label>
+        <select class="w-[500px] h-[28px] rounded mt-2 mb-5 pl-3 ring ring-black" name="" id="">
+            <option value="">Currently Hospitalised</option>
+            <option value="">Does not require Hospitalisation</option>
+            <option value="">Will be Hospitalised soon</option>
+            <option value="">Recently discharged from Hospital</option>
+        </select>
+
+     <br>
+        <label class="mt-[60px] font-sans font-semibold"> Hospital Name </label>
+        <input class="w-[500px] h-[28px] rounded mt-2 mb-5 pl-3 ring ring-black" type="text"  >
+
+        <label class="mt-[60px] font-sans font-semibold"> Enter Your City </label>
+        <input class="w-[500px] h-[28px] rounded mt-2 mb-5 pl-3 ring ring-black" type="text"  >
+        
+        <div class="flex place-items-center justify-center">
+            <p>Add image  </p>
+            <img class="w-[40px]" src="./Assets/Add Image.svg" alt="image">
+        </div>
+        <br>
+    </div>
+    <button class="bg-red-900 w-full h-[50px] text-white mb-7 font-sans font-semibold" onclick="window.location.href='./Fundraising-3.html';">Save and Continue</button>
+     
+     
+</div>
+
+<!-- for next button -->
+<div  class="  flex place-items-center ml-[30px] ">
+    <p class="text-xl">Next</p>
+    <a href="Fundraising-3.html">
+    <img class="w-[70px]" src="./Assets/right arrow.svg" alt="image">
+    </a>
+</div>
+    
+</body>
+</html>

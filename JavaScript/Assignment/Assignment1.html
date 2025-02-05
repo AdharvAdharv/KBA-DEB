@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment</title>
+</head>
+<body>
+    <h2>Question 2</h2>
+    <label for="name">Name :</label>
+    <input type="text" name="" id="">
+    <br><br>
+    <label for="address">Address :</label>
+    <input type="text" name="" id="">
+     <br><br><br>
+    <label for="">Qualification :</label>
+    <br>
+    <label for="">Btech</label>
+    <input type="radio" name="Qualification" value="">
+    <label for="">Mtech</label>
+    <input type="radio" name="Qualification" id="" value="">
+    <label for="">MCA</label>
+    <input type="radio" name="Qualification">
+    <label for="">Others</label>
+    <input type="radio" name="Qualification" id="" onclick="dropdown()">
+    
+    <div id="select" ></div>
+    
+    
+
+    <script>
+        function dropdown(){
+           const value1= document.createElement("select");
+            
+            value1.innerHTML=(" <option> Select Option </option> <option> BCA </option> <option> Bcom </option>  <option> MPhil </option> <option> PGDCA </option>")
+            document.getElementById("select").appendChild(value1)
+
+         
+            
+        }
+    </script>
+
+    <!-- question 3 -->
+     <br><br><br>
+     <h2>Question 3</h2>
+    <label for="">First Number :</label>
+    <input type="number" id="fnum">
+    <br>
+    <label for="">Second Number :</label>
+    <input type="number" id="snum">
+    <br><br>
+    <button onclick="compare()">Compare</button>
+    <p id="print"></p>
+
+    <script>
+        function compare(){
+            num1=document.getElementById("fnum").value;
+            num2=document.getElementById("snum").value;
+
+           
+            if(num1===num2){
+                document.getElementById("print").innerHTML="First Number and Second Number are Equal"
+            }else {
+                document.getElementById("print").innerHTML="First Number and Second Number are NOT Equal"
+            }
+       
+        }
+    </script>
+    
+<!-- Question 4 -->
+    <h2>Question 4</h2>
+    <label for="">Name :</label>
+    <input type="text" name="" id="value">
+    <button onclick="submit()">Submit</button>
+    <p id="print1"></p>
+    <label for=""> Select Roll No :</label>
+    <select name="" id="select1" onchange="showname()"></select>
+    <p id="print2"></p>
+
+    <script>
+        const a=[];
+        function submit(){
+            let input1=document.getElementById("value").value;
+            document.getElementById("value").value=""
+            a.push(input1)
+            console.log(a);
+            document.getElementById("print1").innerHTML=`${input1} Added `;
+            update()
+        }
+         function update(){
+             let count=1;
+             let select2=document.getElementById("select1")
+            select2.innerHTML=""
+            a.forEach(element => {
+                
+                let option=document.createElement("option")
+                option.innerHTML=count
+                select2.appendChild(option);
+                count ++;
+            });
+        }
+            function showname(){
+                let select3=document.getElementById('select1').value;
+                
+                a.forEach((element1,index)=> {
+                    if(select3 == (index+1)){
+                       document.getElementById("print2").innerHTML=element1;
+                    }
+                });
+            }
+     </script>
+                
+<!-- Question 5 -->
+   <h2> Question 5</h2>
+   <label for="">Enter side of square :</label>
+   <input type="number" name="" id="side">
+   <Button onclick="Area()">Area of Square</Button>
+   <h4 id="printside"></h4>
+   <br><br>
+
+   <label for="">Enter the legth :</label>
+   <input type="number" name="" id="length">
+
+   <label for="">Enter the breadth :</label>
+   <input type="number" id="breadth">
+
+   <button onclick="AreaofRectangle()">Area of Rectangle</button>
+    <h4 id="printarea"></h4>
+   <br><br>
+
+   <label for="">Enter radius :</label>
+   <input type="number" id="radius">
+   <button onclick="Radius()"> Area of circle</button>
+   <h4 id="printradius"></h4>
+
+   <script>
+    function Area(){
+        let side1=document.getElementById("side").value
+        document.getElementById("printside").innerHTML=`${side1*side1} Square Unit`;
+    }
+    function AreaofRectangle(){
+        const legth=document.getElementById("length").value;
+        const breadth=document.getElementById("breadth").value;
+        document.getElementById("printarea").innerHTML= `${legth *breadth} Square Unit`;
+    }
+    function Radius(){
+        const radius=document.getElementById("radius").value;
+        document.getElementById("printradius").innerHTML=Math.PI*radius*radius;
+    }
+   </script> 
+
+ <!-- Question 6 -->
+  <h2>Question 6</h2>
+
+  <label for="">Enter Element :</label>
+  <input type="text" name="" id="input">
+  <button onclick="store()">Submit</button>
+  <p>Entered array is : <span id="output"></span></p>
+                
+    <script>
+        const b=[];
+        function store(){
+            input=document.getElementById("input").value;
+            input= input.trim();
+            if(input){
+            b.push(input);
+            document.getElementById("output").innerHTML=b;
+            document.getElementById("input").value="";
+            }
+        }
+    </script>
+    
+ <!-- Question 7    -->
+  <h2>Question 7</h2>
+     <label for="">Enter element :</label>
+     <input type="number" id="data">
+     <button onclick="storedata()">Submit</button>
+     <p>Entered array is : <span id="output5"></span></p>
+     <br>
+     <p> Index  <select name="" id="select5" onchange="showArray()" ></select>
+     The element is : <span id="output6"></span></p>
+     <p>The array in sorted order is : <span id="output7"></span></p>
+     <p>Reversed array : <span id="output8"></span></p>
+     
+            
+     <script>
+        const c=[];
+        
+        function storedata(){
+            const data=document.getElementById("data").value;
+            if(data){
+            c.push(data);
+            document.getElementById("output5").innerHTML=c;
+           
+            updateSelect()
+            sortArray()
+            reverseArray()
+            
+            document.getElementById("data").value="";
+            console.log(c);
+            
+            }
+        }
+        function updateSelect(){
+            let countvalue = 1;
+             let select5=document.getElementById("select5")
+            
+            select5.innerHTML=""
+            c.forEach(element => {
+                
+                let option5 = document.createElement("option");
+                option5.innerHTML=countvalue;
+                
+                select5.appendChild(option5)
+                countvalue ++;
+            });
+        }
+                
+        function showArray(){
+            select5= document.getElementById("select5").value;
+            
+            c.forEach((element,index) => {
+              
+                if(select5 == index+1){
+                document.getElementById("output6").innerHTML=element;
+              }   
+            });
+        }
+        const d=[]
+        function sortArray(){
+           
+         
+            let data=document.getElementById("data").value;
+            data= parseInt(data)
+            if(data){
+            d.push(data);
+            }
+ 
+            for(let i=0 ; i<d.length-1 ; i++){
+                for(let  j=(i+1) ; j<d.length;j++){
+                    if(d[i] > d[j]){
+                    let temp=d[i]
+                    d[i]=d[j]
+                    d[j]=temp
+                    }
+                }
+            }
+            document.getElementById("output7").innerHTML=d;
+        }
+        const e=[]
+        function reverseArray(){
+           
+         
+           let data=document.getElementById("data").value;
+           data= parseInt(data)
+           if(data){
+           e.push(data);
+           }
+
+           for(let i=0 ; i<d.length-1 ; i++){
+               for(let  j=(i+1) ; j<d.length;j++){
+                   if(e[j] > e[i]){
+                   let temp=e[i]
+                   e[i]=e[j]
+                   e[j]=temp
+                   }
+               }
+           }
+           document.getElementById("output8").innerHTML=e;
+       }
+       </script>      
+  
+
+
+  <!-- Question8 -->
+
+<h2>Question 8</h2> 
+  <label for="">Name of the subject :</label>
+  <input type="text" id="subject">
+  
+  <label for="">Mark :</label>
+  <input type="number" id="mark">
+  <button onclick="marklist()">Submit</button>
+  <p id="printmark"></p>
+
+  <script>
+    function marklist(){
+        const subject=document.getElementById("subject").value
+        let mark=document.getElementById("mark").value
+        mark=parseInt(mark)
+        
+        if(mark && mark<100){
+            
+            if(mark>90){
+                document.getElementById("printmark").innerHTML=`You have A+ in ${subject}`
+            }
+            else if(mark>80){
+                document.getElementById("printmark").innerHTML=`You have A in ${subject}`
+            }
+            else if(mark>70){
+                document.getElementById("printmark").innerHTML=`You have B+ in ${subject}`
+            }
+            else if(mark>60){
+                document.getElementById("printmark").innerHTML=`You have B in ${subject}`
+            }
+            else if(mark>50){
+                document.getElementById("printmark").innerHTML=`You have c in ${subject}`
+            }else{
+                document.getElementById("printmark").innerHTML=`You are FAILED IN ${subject}`
+            }
+        }else{
+            document.getElementById("printmark").innerHTML="enter valid mark"
+        }
+    }
+  </script>
+
+  <!-- Question 9 -->
+   <h2>Question 9</h2>
+    <table border="1" id="table">
+        <tr>
+            <th>Student Name</th>
+            <th>Mark</th>
+        </tr>
+    </table>
+    <br><br>
+    <label for="">Enter student Name:</label>
+    <input type="text" id="sname">
+
+    <label for="">Enter Mark :</label>
+    <input type="number" name="" id="smark">
+    <button onclick="submitData()">Submit</button>
+    <p id="error"></p>
+
+    <br>
+    <label for="">Search Student : </label>
+    <input type="text" name="" id="searchname">
+    <button onclick="Search()">Search</button>
+    <h4 id="printstudent"></h4>
+    <br>
+    <button onclick="average()">Average</button> 
+    <h4> Average Mark of Students : <span id="printmark1"></span></h4>
+   
+    <script>
+        const student=[]
+       function submitData(){
+           const sname=document.getElementById("sname").value;
+           const smark=document.getElementById("smark").value;
+           const table=document.getElementById("table")
+
+           student.push({sname,smark})
+
+           document.getElementById("sname").value=""
+           
+           if(sname && smark<100 && smark){
+        
+
+         let tr=document.createElement("tr")
+         let th=document.createElement("td")
+         let th1=document.createElement("td")
+         
+         th.innerHTML=sname
+         th1.innerHTML=smark
+         
+         tr.appendChild(th)
+         tr.appendChild(th1)
+         table.appendChild(tr)
+
+           }else{
+            document.getElementById("error").innerHTML="Enter valid details"
+           }
+       }
+       function Search(){
+        const searchname=document.getElementById("searchname").value;
+        student.forEach(element => {
+            
+            if(searchname==element.sname){
+                document.getElementById("printstudent").innerHTML=`${searchname} mark is ${element.smark}`
+            }else{
+                document.getElementById("printstudent").innerHTML="name not match"
+            }
+        }); 
+
+       }
+       function average(){
+        let average2=0;
+        student.forEach(element => {
+            let average1 = element.smark;
+            average1=parseInt(average1)
+             average2 =(average2+ average1)
+            
+            
+        });
+        const finalaverage = (average2/student.length)
+         console.log(finalaverage);
+         document.getElementById("printmark1").innerHTML=finalaverage;
+         
+       }
+    </script>
+
+
+
+<!-- Question 10 -->
+
+  <h2>Question 10</h2>
+  
+  <label for="">Enter element :</label>
+  <input type="text" id="element5">
+  <button onclick="storeElement()">Submit</button>
+  <button onclick="maximum()">Maximum</button>
+   <h4 id="printelement"></h4>
+
+   <script>
+    const array5=[]
+     function storeElement(){
+        const  element5=document.getElementById("element5").value;
+        if(element5){
+        array5.push(element5)
+        document.getElementById("element5").value=""
+        console.log(array5);
+        }
+    }
+
+     function maximum(){
+        let j=0
+
+        array5.forEach(x => {
+            let i= x.length;
+            if(j<i){
+               document.getElementById("printelement").innerHTML=`${x} is the largest element`;
+            }
+            j=i;
+            console.log(i);
+        });
+    }
+    </script>
+
+ 
+
+<!-- Question 11 -->
+
+<h2>Question 11</h2>
+  <input type="number" name="" id="number2">
+  <button onclick="reversenumber()">Reverse</button>
+   <h4 id="printRnum"></h4>
+  
+  <script>
+    function reversenumber(){
+      let num=  document.getElementById("number2").value;
+      if (num) {
+      let reverse=0
+      num=parseInt(num)
+       
+      while (num > 0) { 
+      let digit = num % 10; 
+      reverse = reverse * 10 + digit;
+      num = Math.floor(num / 10);
+    }
+    console.log(reverse);
+    document.getElementById("printRnum").innerHTML=`REVERSED No :${reverse}`
+}else{
+    document.getElementById("printRnum").innerHTML=`Enter a valid value`
+
+}
+}
+  </script>
+
+
+</body>
+</html>

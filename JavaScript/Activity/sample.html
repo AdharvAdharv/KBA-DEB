@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample</title>
+</head>
+<body>
+   
+
+
+<P>Html page to enter names of fruits and insert the entered name to array and there is a dropdown and on selecting the index from drop down, display the fruit on the index.
+</P>
+<label >Fruit Name:</label>
+<input type="text" id="fruit">
+<button onclick="addfruit()">Enter</button>
+<br><br> 
+
+<label >select the index:</label>
+<select name="" id="fruitDropdown" onchange="displayFruit()">
+ <option value="">--Select Index--   </option>
+</select>
+
+<div id="output">
+
+ <p>Selected Fruit: <span id="selectedFruit">None</span></p>
+</div>
+
+
+<script>
+ let array=[]
+ function addfruit(){
+    let fvalue=document.getElementById("fruit").value;
+    array.push(fvalue)
+    document.getElementById("fruit").value="";
+    
+    document.getElementById("print").innerText=array
+    updateDropdown()
+ }
+ function updateDropdown() {
+const dropdown = document.getElementById("fruitDropdown");
+dropdown.innerHTML = '<option value="">--Select Index--</option>'; // Reset dropdown
+dropdown.innerHTML += array.map((_, index) => `<option value="${index}">${index}</option>`).join('');
+}
+
+// Function to display the selected fruit
+function displayFruit() {
+     const index = document.getElementById("fruitDropdown").value;
+     const output = document.getElementById("selectedFruit");
+     if (index) {
+         output.textContent = array[index];
+     } else {
+         output.textContent = "None";
+     }
+ }
+
+ </script>
+
+</body>
+</html>

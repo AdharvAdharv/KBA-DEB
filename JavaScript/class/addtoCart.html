@@ -30,25 +30,22 @@
     <button onclick="checkout()">Checkout</button>
 
     <script>
-        // Array to store cart items
+        
         const cart = [];
 
-        // Function to add items to the cart
+        
         function addToCart(itemName, price, quantityId) {
             const quantity = document.getElementById(quantityId).value;
 
-           
-
-            // Add the item details to the cart
+            
             cart.push({ itemName, price, quantity });
           
             console.log(itemName,'added to cart');
             console.log(price);
             
-            
-        }
+            }
 
-        // Function to calculate total price and display it on checkout
+        
         function checkout() {
            
 
