@@ -13,12 +13,13 @@
     <label >Enter temperature in  celcius : </label>
     <input type="tel" id="celcius">
     <button onclick="convert()">Submit</button>
+    <p id="print1"></p>
     
     <script>
         function convert(){
             const temperature=document.getElementById("celcius").value;
             const faranheat=(temperature * 9/5) + 32;
-        document.getElementById("print").innerHTML=faranheat
+        document.getElementById("print1").innerHTML=faranheat
     }
    </script>
    <br><br><br>
@@ -39,7 +40,7 @@
     <label >DOB : <span id="sdob"></span></label>
     
 </div>
-<p id="print"></p>
+
 
    <script>
     function generateid(){
@@ -78,52 +79,58 @@
      there is a dropdown and on selecting the index from drop down, display the fruit on the index. -->
 
 <br><br><br>
-   <P>Html page to enter names of fruits and insert the entered name to array and there is a dropdown and on selecting the index from drop down, display the fruit on the index.
-       </P>
-       <label >Fruit Name:</label>
-       <input type="text" id="fruit">
-       <button onclick="addfruit()">Enter</button>
-       <br><br> 
+<P>Html page to enter names of fruits and insert the entered name to array and there is a dropdown and on selecting the index from drop down, display the fruit on the index.</P>
+<p>Fruit Name :</p>
+<input type="text" id="input">
+<button onclick="addfruit()" >Enter</button>
+<p id="fruit"></p>
+ 
+<p>Select the index:</p>
+<select name="" id="select">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
 
-       <label >select the index:</label>
-       <select name="" id="fruitDropdown" onchange="displayFruit()">
-        <option value="">--Select Index--   </option>
-       </select>
-
-       <div id="output">
-       
-        <p>Selected Fruit: <span id="selectedFruit">None</span></p>
-    </div>
+</select>
+<button  onclick="showfruit()" >Select</button>
+<p>Selected Fruit Name :<span id="output"></span></p>
 
 
-    <script>
-        let array=[]
-        function addfruit(){
-           let fvalue=document.getElementById("fruit").value;
-           array.push(fvalue)
-           document.getElementById("fruit").value="";
-           
-           document.getElementById("print").innerText=array
-           updateDropdown()
+<script>
+    array=[];
+    function addfruit(){
+        input1=document.getElementById("input").value;
+        document.getElementById("input").value="";
+
+        array.push(input1)
+        console.log(array);
+        document.getElementById("fruit").innerHTML=` ${input1} Added to array.`
+    }
+    function showfruit(){
+        
+        
+        let select1=document.getElementById("select").value
+        console.log(select1);
+        
+        if(select1==1){
+            document.getElementById("output").innerHTML=`${array[0]}`
+        }else if(select1==2){
+            document.getElementById("output").innerHTML=`${array[1]}`
         }
-        function updateDropdown() {
-    const dropdown = document.getElementById("fruitDropdown");
-    dropdown.innerHTML = '<option value="">--Select Index--</option>'; // Reset dropdown
-    dropdown.innerHTML += array.map((_, index) => `<option value="${index}">${index}</option>`).join('');
-}
+        else if(select1==3){
+            document.getElementById("output").innerHTML=`${array[2]}`
 
-       // Function to display the selected fruit
-       function displayFruit() {
-            const index = document.getElementById("fruitDropdown").value;
-            const output = document.getElementById("selectedFruit");
-            if (index) {
-                output.textContent = array[index];
-            } else {
-                output.textContent = "None";
-            }
+        }else if(select1==4){
+            document.getElementById("output").innerHTML=`${array[3]}`
         }
+        else{
+            document.getElementById("output").innerHTML=`not selected`;
+        }
+        
 
-        </script>
+    }
+</script>
                
     
 

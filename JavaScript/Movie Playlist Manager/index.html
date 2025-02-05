@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="index.js"></script>
+    <title>Movie Playlist Manager</title>
+</head>
+<style>
+    .clbtn1{
+        background: blue;
+        color: black;
+        height:40px;
+        width: 100px;
+        font-weight: bold;
+        font-size: large;
+        border-radius: 10px;
+        margin-left: 50px;
+        margin-top: 50px;
+    }
+    .clbtn2{
+        background: blue;
+        color: black;
+        height:40px;
+        width: 100px;
+        font-weight: bold;
+        font-size: large;
+        border-radius: 10px;
+        margin-left: 50px;
+        margin-top: 50px;
+    }
+    .clbtn3{
+        background: blue;
+        color: black;
+        height:40px;
+        width: 100px;
+        font-weight: bold;
+        font-size: large;
+        border-radius: 10px;
+        margin-left: 50px;
+        margin-top: 50px;
+    }
+    .red{
+        color: red;
+    }.yellow{
+        color: yellow;
+    }.green{
+        color: green;
+    }.strike{
+        text-decoration: line-through;
+        
+
+        
+    }
+
+</style>
+
+<body>
+    <nav class="h-[100px] w-auto bg-blue-400 flex ">
+       <img src="logo.webp" class="h-[100px] w-[100px]" alt="logo">
+      <p class="font-black text-5xl text-white m-auto">Movie Playlist Manager</p>
+
+    </nav>
+    <div class="h-[200px] w-[600px] ring-2 mt-[80px] mx-auto pl-[100px]"> 
+        <label class="text-xl font-bold" for="">Movie name :</label>
+        <input class="ring-2 ring-black" type="text" id="movieName" placeholder="Movie Name">
+        <br><br>
+        <label class="text-xl font-bold" for="">Priority :</label>
+        <select name="" id="priority">
+            
+            <option value="1" >Hight</option>
+            <option value="2">Medium</option>
+            <option value="3">Low</option>
+        </select>
+        <br><br>
+        <button class="w-[150px] ring-2 ring-black text-xl font-bold" onclick="addMovie()">Add Movie</button>
+    </div>
+    <div class="ml-[100px]">
+        <ul id="list"></ul>
+    </div>
+     
+
+    
+</body>
+</html>

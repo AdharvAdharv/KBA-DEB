@@ -29,13 +29,73 @@
       const cinemas=document.getElementById("cinemalist");
       
       array.forEach(cinemas1 => {
-              cinemas.innerHTML+=`<li>${cinemas1}</li>`;
+              cinemas.innerHTML+=`<li>${cinemas1}</li>`; 
         
           });
-          </script>
+         
+</script>
+
+
+<div id="kba"></div>
+<script>
+//On the KBA-courses site you created add a radio button showing your experience on KBA(like good, bad, average).
+
+let section=document.getElementById("kba");
+let label=document.createElement("label");
+label.innerHTML="Experience on KBA : ";
+section.appendChild(label);
+
+//first radio button
+
+let Gradio=document.createElement("input")
+
+Gradio.name="choice"
+Gradio.type="radio"
+Gradio.id="button"
+Gradio.value="button"
+
+section.appendChild(Gradio)
+
+let label1=document.createElement("label")
+label1.innerHTML="Good";
+section.appendChild(label1)
+
+//second radio button
+
+let Gradio1=document.createElement("input")
+Gradio1.name="choice"
+Gradio1.type="radio"
+Gradio1.id="button1"
+Gradio1.value="button1"
+
+section.appendChild(Gradio1)
+
+
+let label2=document.createElement("label")
+label2.innerHTML="Bad";
+section.appendChild(label2)
+
+//third radio button
+
+let Gradio2=document.createElement("input")
+Gradio2.name="choice"
+Gradio2.type="radio"
+Gradio2.id="button2"
+Gradio2.value="button2"
+
+section.appendChild(Gradio2)
+
+
+
+let label3=document.createElement("label")
+label3.innerHTML="Average"
+section.appendChild(label3)
+</script>
+
+
  <!-- Create a dropdown for programming language classes offered on html page using javascript. -->
 <p>Create a dropdown for programming language classes offered on html page using javascript.</p>
-         <select name="" id="select"></select>
+         <select id="select"></select>
          <script>
             const select1=document.getElementById("select");
            const array1=['html','css','java'];
@@ -156,7 +216,7 @@ document.write("<br><br>Write a JavaScript program to compute the sum of the two
 
    document.write("<br><br>Program to find whether the person is eligible for voting using ternary operator<br> OUTPUT :")
    const personage=43;
-   document.write(personage>18 ? "Person is eligible for voting":"Person is not eligible for voting")
+   document.write(personage>=18 ? "Person is eligible for voting":"Person is not eligible for voting")
 </script>
 
 
