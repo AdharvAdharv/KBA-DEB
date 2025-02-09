@@ -3,7 +3,7 @@ function authenticate(req,res,next){
     console.log("hi");
     
     const cookie = req.headers.cookie;
-    console.log(cookie);
+    
 
     if(!cookie){
         console.log("please login to continue");
