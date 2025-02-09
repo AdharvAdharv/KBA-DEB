@@ -1,8 +1,8 @@
 import dotenv from "dotenv";
 import express,{json} from 'express';
-import { userauth } from "./Routes/user.js";
+import { userauth } from "./Routes/userauth.js";
 import adminauth from "./Routes/adminauth.js";
-import adminSign from "./Routes/adminSignup.js";
+
 import cors from "cors";
 import mongoose from "mongoose";
 
@@ -20,7 +20,7 @@ const app=express();
 app.use('/',userauth)  
 app.use('/',adminauth) 
 
-app.use('/admin',adminSign)
+
 
 // mongodb
 
