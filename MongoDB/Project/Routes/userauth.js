@@ -5,6 +5,7 @@ import authenticate from "../Middleware/auth.js";
 import { sample } from "../Model/Model.js";
 import { Details } from "../Model/Model.js";
 import { upload } from "../Middleware/upload.js";
+import { Contributions } from "../Model/Model.js";
 
 const userauth=Router();
 const ConvertToBase64=(buffer)=>{
@@ -138,6 +139,8 @@ console.log(PatientDetails);
 })
 
 
+
+
 userauth.get('/getfundraising',async(req,res)=>{
     const {patientname}=req.query;
     console.log(patientname);
@@ -189,6 +192,33 @@ userauth.delete('/stopfundraising',async(req,res)=>{
     }catch{
         res.status(500).send('Internal server Error')
     }
+})
+
+userauth.post('/contribute',authenticate,async(req,res)=>{
+    const {Name,Amount}=req.body;
+
+    const amountDetails = new Contributions({
+        name:Name,
+        amount:Amount
+    })
+    await amountDetails.save()
+    res.status(200).send('Transaction Completed')
+    console.log("Transaction Completed");
+    
+})
+
+userauth.get('/showContributions',authenticate,async(req,res)=>{
+    
+     const Contribution = await Contributions.find()
+
+    if(Contribution){
+        res.status(200).send(Contribution)
+        console.log(Contribution);
+    }else{
+          console.log('There is no Contribution');
+          res.status(404).send('There is no Contributions')
+          
+        }
 })
 
 

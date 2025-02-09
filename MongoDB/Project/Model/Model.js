@@ -24,5 +24,12 @@ const PDetails= new Schema({
 })
 const Details =model ('Patient Details',PDetails)
 
+const amount =new Schema({
+    name:String,
+    amount:String
+})
+const Contributions = model ('Contributions',amount)
+
+export {Contributions}
 export {Details}
 export {sample}
