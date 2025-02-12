@@ -19,8 +19,8 @@ userauth.post('/signup',async(req,res)=>{
         const existingUser= await sample.findOne({email:Email});
 
         if(existingUser){
-            res.status(401).send('Email id already Signed up Please Login')
-            console.log('Email id already Signed up Please Login');
+            res.status(401).send(' already Signed up Please Login')
+            console.log('exist Signed up Please Login');
             
         }else{
         const NewPassword= await bcrypt.hash(Password,10);
@@ -170,7 +170,7 @@ userauth.get('/getfundraising',async(req,res)=>{
 userauth.delete('/stopfundraising',async(req,res)=>{
    
     try{
-        const{Name}=req.body;
+        const Name=req.query.Name;
         console.log(Name);
 
        const deletePatient = await Details.findOne({patientName:Name})
@@ -223,7 +223,7 @@ userauth.get('/showContributions',authenticate,async(req,res)=>{
 
 
 userauth.get('/logout',(req,res)=>{
-    res.clearCookie('authtoken')
+    res.clearCookie('authToken')
     res.status(200).send('Successfully logged out');
     console.log('Successfully logged out');
     
