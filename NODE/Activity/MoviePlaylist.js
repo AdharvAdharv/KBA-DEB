@@ -24,7 +24,6 @@ function storeMovie(movie){
  function handleOption(option1){   
     switch (option1) {
         case '1':{
-              console.log('hello');
               addmovie();
               break;
         }
