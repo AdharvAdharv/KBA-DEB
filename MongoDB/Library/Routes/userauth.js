@@ -2,28 +2,37 @@ import { Router } from "express";
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
+import { User } from "../Model/Schema.js";
 const userauth=Router();
-const user=new Map();
 
 
 userauth.post('/signup',async(req,res)=>{
     try{
         
         const {FirstName,LastName,UserName,Password,UserRole}=req.body;
+        console.log('hi');
         
-         
-         if(user.get(UserName)){
+        const existingUser= await User.findOne({userName:UserName})
+        console.log(existingUser);
+         if(existingUser){
             res.status(401).send('User Name already exist');
             console.log('User Name already exist');
             
          }else{
             const NewPassword= await bcrypt.hash(Password,10);  //encrypting password
-            user.set (UserName,{FirstName,LastName,Password:NewPassword,UserRole})   //storing into map ---key value is username
-
+             
+            const NewUser = new User({
+            fname:FirstName,
+            lname:LastName,
+            userName:UserName,
+            password:NewPassword,
+            Role:UserRole
+        })
+        await NewUser.save()
              console.log('---------sign up----------');
              res.status(201).send('signed up')
             }
-        console.log(user);
+        
         
     }
     catch{
@@ -37,18 +46,18 @@ userauth.post('/login',async(req,res)=>{
     try{
         console.log('------LogIn Page ------');
         const {UserName,Password}=req.body;
-        const result=user.get(UserName);
+        const result= await User.findOne({userName:UserName});
 
          if(!result){
             res.status(400).send('Enter valid Username')
          }else{
-            console.log(result.Password);
-            const valid= await bcrypt.compare(Password,result.Password);    //comparing login password and sign up password
+            console.log(result.password);
+            const valid= await bcrypt.compare(Password,result.password);    //comparing login password and sign up password
             console.log(valid);
             
 
              if(valid){
-                const token=jwt.sign({UserName:UserName,UserRole:result.UserRole},process.env.SECRET_KEY,{expiresIn:'1h'})
+                const token=jwt.sign({UserName:UserName,UserRole:result.Role},process.env.SECRET_KEY,{expiresIn:'1h'})
                 console.log(token);
                 res.cookie('authToken',token,
                     {

@@ -1,25 +1,35 @@
 import { Router } from "express";
 import { authenticate } from "../Middleware/auth.js";
 
-
+import { Books } from "../Model/Schema.js";
+import admincheck from "../Middleware/admincheck.js";
 
 const adminauth=Router();
-const books=new Map();
 
 
-adminauth.post('/addbook',authenticate,(req,res)=>{
+
+adminauth.post('/addbook',authenticate,admincheck,async(req,res)=>{
     console.log("add book page");
 
     try{
         if(req.role == 'admin'){
             const {BookName,AuthorName,Genre,Description,Price}=req.body;
 
-              if(books.get(BookName)){
+          const existBook = await Books.findOne({bookName:BookName})
+
+              if( existBook ){
                 res.status(400).send('Book already saved') 
                 console.log('Book Name already exist');
                 
               }else{
-                books.set(BookName,{AuthorName,Genre,Description,Price})
+                const book = new Books({
+                  bookName:BookName,
+                  authorName:AuthorName,
+                  genre:Genre,         
+                  description:Description,
+                  price:Price
+                })
+                await book.save()
                 res.status(201).send('Book Added')
                 console.log('Book Added');
               }
@@ -35,16 +45,16 @@ adminauth.post('/addbook',authenticate,(req,res)=>{
 })
 
 
-adminauth.get('/showBook',authenticate,(req,res)=>{
+adminauth.get('/showBook',authenticate,async(req,res)=>{
   try{
     console.log('-----Show Book Page----');
     
     const book1=req.query.BookName;
-    const result=books.get(book1);
+    const result= await Books.findOne({bookName:book1});
     
 
     if(result){
-      res.status(200).send(books.get(book1));
+      res.status(200).send( result);
       console.log(result);
       
 

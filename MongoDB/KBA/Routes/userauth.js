@@ -14,7 +14,9 @@ userauth.post('/signup',async (req,res)=>{
     
     const {FirstName,LastName,UserName,Password,UserRole}=req.body;
 
+
     const existingUser=await sample.findOne({userName:UserName})
+  
   
     if(existingUser){
         console.log('User already exist ');

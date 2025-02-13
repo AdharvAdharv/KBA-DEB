@@ -7,7 +7,7 @@ import upload from "../Middleware/upload.js";
 const adminauth= Router();
 const course=new Map()
 
-
+  
 adminauth.post('/addcourse',authenticate,admincheck,upload.single('courseImage'),  async(req,res)=>{
     
   try{
