@@ -1,29 +1,38 @@
 import { Router } from "express";
 import Authenticate from "../Middleware.js/auth.js";
 import AdminCheck from "../Middleware.js/Admincheck.js";
+import { Certificate } from "../Model/Schema.js";
 
 const adminauth=Router();
-const certi=new Map();
-adminauth.post('/addcertificate',Authenticate,AdminCheck,(req,res)=>{
+
+adminauth.post('/addcertificate',Authenticate,AdminCheck,async(req,res)=>{
      try{
         const {Course,CertificateId,CandidateName,Grade,IssueDate}=req.body;
         console.log(CertificateId);
         
-        console.log('-----Add Certificate-----');
+        console.log('-----Add Certificate page-----');
         
-        if(certi.get(CertificateId)){
+        const exist= await Certificate.findOne({certificateID:CertificateId})
+        
+        if( exist ){
          
          console.log('Certificate ID already exist');
          res.status(400).send('Certificate ID already exist')
          
         }else{
          
-         
-         certi.set(CertificateId,{Course,CandidateName,Grade,IssueDate})
+         const newCerti = new Certificate({
+         course:Course,
+         certificateID:CertificateId,
+         candidateName:CandidateName,
+         grade:Grade,
+         issueDate: IssueDate
+        
+      })
+      await newCerti.save()
          res.status(201).send('Certificate Added');
          console.log('Certificate Added');
         
-         
          
         }
  
@@ -33,18 +42,18 @@ adminauth.post('/addcertificate',Authenticate,AdminCheck,(req,res)=>{
     
 })
 
-adminauth.get('/ShowCertificate',(req,res)=>{
+adminauth.get('/ShowCertificate',async (req,res)=>{
    try{
       console.log('----Show Certificate----');
       
        const CID=req.query.CertificateId 
        console.log(CID);
-       const result=certi.get(CID)
+       const result= await Certificate.findOne({certificateID:CID})
       
        
       
        if(result){
-         console.log(certi.get( CID ));
+         console.log(result);
          res.status(200).send(result)
          
 

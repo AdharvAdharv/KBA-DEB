@@ -1,10 +1,10 @@
 import { Router } from "express";
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
+import { User } from "../Model/Schema.js";
 
 
 const userauth=Router()
-const user=new Map();
 
 userauth.post('/signup',async (req,res)=>{
    
@@ -13,18 +13,27 @@ try{
     
     const {Fname,Lname,UserName,Role,Password}= req.body
    
-    
-    if(user.get(UserName)){
+    const existUser = await User.findOne({userName:UserName})
+
+    if( existUser ){
         console.log("User Name Already exist");
         res.status(401).json({message:'User Name already exist'})
         
     }else{
         const NewPassword= await bcrypt.hash(Password,10)
-        user.set(UserName,{Fname,Lname,Role,Password:NewPassword});
+       
+        const NewUser = new User({
+            firstName: Fname,
+            lastName: Lname,
+            userName: UserName,
+            password: NewPassword,
+            userRole: Role
+        })
+        await NewUser.save()
        
         console.log('----Sign up page----');
         res.status(201).send('Sign Up')
-        console.log(user);
+        console.log(NewUser);
         
 
     }
@@ -39,20 +48,20 @@ userauth.post('/login',async(req,res)=>{
     try{
         console.log('====== Login Page ======');
         const {UserName,Password}=req.body;
-        const result = user.get(UserName);
+        const result = await User.findOne({userName:UserName});
 
         if(!result){
             res.status(400).send('Enter valid Username');
             console.log('Enter valid Username');
             
         }else{
-            const valid = await bcrypt.compare(Password,result.Password)
+            const valid = await bcrypt.compare(Password,result.password)
             console.log(` Password is ${valid}`);
         
          if(valid){
             
             
-            const token=jwt.sign({UserName:UserName,Role:result.Role},process.env.SECRET_KEY,{expiresIn:'1h'});
+            const token=jwt.sign({UserName:UserName,Role:result.userRole},process.env.SECRET_KEY,{expiresIn:'1h'});
             console.log(token);
             res.cookie('authtoken',token,
                 {
