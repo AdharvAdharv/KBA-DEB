@@ -70,6 +70,70 @@ adminauth.get('/showBook',authenticate,async(req,res)=>{
   }
 })
 
+adminauth.put('/updatebook',authenticate,admincheck,async(req,res)=>{
+  try{
+
+    const {BookName,AuthorName,Genre,Description,Price}=req.body;
+    const result = await Books.findOne({bookName:BookName})
+    
+    if(result){
+      result.bookName = BookName;
+      result.authorName=AuthorName;
+      result.genre=Genre;
+      result.description=Description;
+      result.price=Price;
+
+      console.log(result);
+      await result.save();
+      
+      console.log("Book data Updated");
+      res.status(400).send('Book data Updated')
+      
+      
+      
+    }else{
+      console.log('Book not found');
+      res.status(400).send('Book not found')
+      
+    }
+ 
+
+  }catch{
+    res.status(500).send('Internal server error')
+  }
+
+})
+
+
+adminauth.delete('/deletebook',authenticate,admincheck,async(req,res)=>{
+  const Name=req.body.BookName
+  console.log( Name);
+  const delete1 = await Books.findOne({bookName:Name})
+ 
+ 
+  try{
+
+    if(delete1){
+     await Books.findOneAndDelete({bookName:Name})
+
+      console.log('deleted');
+      
+      res.status(201).send('Book Deleted');
+      
+
+    }else{
+      console.log('Book not found');
+      res.status(400).send('Book not found')
+      
+    }
+
+  }catch{
+    res.status(500).send('Internal server error')
+  }
+  
+})
+
+
 adminauth.get('/logout',(req,res)=>{
 
   res.clearCookie('authToken')

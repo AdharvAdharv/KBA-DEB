@@ -6,14 +6,15 @@ import TopCourse from "../components/TopCourse";
 import CourseGrid from "../components/CourseGrid";
 import courses from '../assets/data/course.json'
 import Footer from '../components/Footer';
+import Navbar from '../components/Navbar';
 
 const Home = () => {
   return (
     <div> 
-         <Nav />
+        <Navbar />
         <Hero />
         <TopCourse />
-        <CourseGrid courses={courses} />
+        <CourseGrid  />
         <Footer ></Footer>
     </div>
   )
