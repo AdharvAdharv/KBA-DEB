@@ -3,9 +3,9 @@ import CourseCard from './CourseCard'
 
 const CourseGrid = ({ isHome = true}) => {
 
-  const [courses,setCourses] = useState([])
-  const [loading,setLoading] = useState (true)
-  const courseList = isHome ? courses.slice(0,3) : courses;
+ const [courses,setCourses] = useState([])
+ const [loading,setLoading] = useState (true)
+ const courseList = isHome ? courses.slice(0,3) : courses;
 
   useEffect(() =>{    
       const fetchCourses = async () => {
@@ -17,14 +17,14 @@ const CourseGrid = ({ isHome = true}) => {
           console.log(error);
           
         }finally{
-            setLoading(false)
+          setLoading(false)
         }
       }
       fetchCourses();
   },[])
   return (
     <>
-    <h1 className='flex flex-col items-center font-bold text-2xl '>
+    <h1 className='flex flex-col items-center font-bold text-3xl mt-12 font-serif text-decoration-underline '>
     {isHome ? "Top Courses" : "All Courses"}
     </h1>
 

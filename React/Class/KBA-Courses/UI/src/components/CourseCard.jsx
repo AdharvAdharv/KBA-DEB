@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import courseImage from '../assets/images/courseImage.jpeg'
 
-
+ 
 const CourseCard = ({course}) => {
   
   const [showFullDescription,setFullDescription] =useState(false)
@@ -21,7 +21,7 @@ const CourseCard = ({course}) => {
         {showFullDescription ? 'Less' : 'More' } 
        </button>
 
-        <button class="bg-blue-900 text-white rounded w-[110px] h-[40px] mt-3">Learn More</button>
+        <button class="bg-blue-900 text-white rounded w-[110px] h-[40px] mt-3" >Learn More</button>
         
     </div>
 </div>

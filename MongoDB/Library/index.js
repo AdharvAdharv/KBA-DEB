@@ -20,7 +20,7 @@ app.use('/',userauth)
 app.use('/',adminauth)
 
 app.listen(process.env.PORT,function(){
-    console.log(`Service is listening at ${process.env.PORT}`);
+    console.log(`Server is listening at ${process.env.PORT}`);
 })
  
 mongoose.connect('mongodb://localhost:27017/Library').then(() =>{
