@@ -51,7 +51,7 @@ adminauth.get('/showBook',authenticate,async(req,res)=>{
     
     const book1=req.query.BookName;
     const result= await Books.findOne({bookName:book1});
-    
+     
 
     if(result){
       res.status(200).send( result);

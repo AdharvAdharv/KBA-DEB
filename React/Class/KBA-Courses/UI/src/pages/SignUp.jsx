@@ -1,0 +1,34 @@
+import React from 'react'
+
+const SignUp = () => {
+  return (
+    <body class="flex justify-center mt-20">
+    <div class="bg-slate-400 w-96 h-auto pl-12 font-serif text-xl rounded-md ...	">
+        <div class="mt-6 ">
+            <p class="font-bold text-3xl">Sign Up  </p>
+        </div>
+        <div class="mt-6 ">
+            <label for="name">Name :</label>
+        </div>
+        <div><input class="rounded-md ..." type="text" /></div>
+        
+        <div class="mt-6">
+            <label for="email">Email :</label>
+        </div>
+        <div><input class="rounded-md ..." type="email" /></div>
+        
+        <div class="mt-6">
+            <label for="password">Password :</label></div>
+        <div><input class="rounded-md ..." type="password" /></div>
+        
+        <div class="mt-6 pl-24"><button class="bg-fuchsia-900 text-white font-bold rounded w-[110px] h-[35px]">Sign Up</button></div>
+  
+        <div class="mt-3 mb-6">
+            <p>Already Have a Account ? <a class="text-blue-600" href="loginpage.html">Login</a></p> </div>
+  
+    </div>
+</body>
+  )
+}
+
+export default SignUp
