@@ -1,12 +1,12 @@
 import React from 'react'
-import UpdateBox from '../components/UpdateBox'
 import Navbar from '../components/Navbar'
+import CourseForm from '../components/CourseForm'
 
 const UpdateCourse = () => {
   return (
     <>
    <Navbar />
-    <UpdateBox />
+   <CourseForm heading= {false} />
     </>
   )
 }
