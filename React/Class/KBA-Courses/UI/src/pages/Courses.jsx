@@ -6,7 +6,7 @@ const Courses = () => {
   return (
     <>
     <Navbar/>
-    <CourseGrid isHome={false} />
+    <CourseGrid isHome={true} />
 
     </>
   )

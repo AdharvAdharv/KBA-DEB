@@ -14,7 +14,8 @@ const PDetails= new Schema({
     fundraisername:{type:String,required:true},
     amount:{type:String,required:true},
     relation:{type:String,required:true},
-    patientName:{type:String,required:true,unique:true},
+    patientName:{type:String,required:true},
+    patientId:{type:Number,unique:true},
     patientAge:{type:String,required:true},
     hospitalStatus:{type:String,required:true},
     hospitalName:{type:String,required:true},
@@ -25,8 +26,10 @@ const PDetails= new Schema({
 const Details =model ('Patient Details',PDetails)
 
 const amount =new Schema({
-    name:String,
-    amount:String
+    id:{type:String,reqired:true},
+    pname:{type:String,reqired:true},
+    ContribitorName:String,
+    amount:{type:String,reqired:true}
 })
 const Contributions = model ('Contributions',amount)
 

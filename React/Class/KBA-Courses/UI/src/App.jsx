@@ -2,13 +2,16 @@ import React from "react";
 
 
 import Home from "./pages/Home";
-import LearnMore from "./pages/LearnMore";
+import AddCourse from './pages/AddCourse.jsx'
+import UpdateCourse from "./pages/UpdateCourse.jsx";
 
 
 const App = () => {
   return (
     <>
        <Home />
+       <AddCourse />
+       <UpdateCourse />
      
        
       
