@@ -1,23 +1,22 @@
 import React from "react";
+import Login from "./pages/Login.jsx";
+import SignUp from "./pages/SignUp.jsx";
+import Dashboard from './pages/Dashboard'
 
-
-import Home from "./pages/Home";
-import AddCourse from './pages/AddCourse.jsx'
-import UpdateCourse from "./pages/UpdateCourse.jsx";
+import { BrowserRouter, Routes, Route,Navigate, Router } from "react-router-dom";     
 
 
 const App = () => {
   return (
     <>
-       <Home />
-       <AddCourse />
-       <UpdateCourse />
-     
-       
-      
-       
-      
-      
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Navigate to= '/signup'/> }  />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Routes>
+      </BrowserRouter>
        
    </>
   )
