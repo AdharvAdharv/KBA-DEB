@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex justify-center mt-20">
+    <div class="bg-slate-400 w-96 h-auto pr-4 pl-12 rounded-md ... ">
+        <div class="mt-6">
+
+            <p class="font-bold text-3xl font-serif	">Login</p>
+        </div>
+        <div class="mt-6">
+
+            <label class="text-xl font-serif	" for="email">Email :</label>
+        </div>
+        <div>
+
+            <input class="rounded-md ..." type="email" id="email">
+        </div>
+        <div class="mt-6">
+            <label class="text-xl font-serif	"  for="password">Password :</label>
+        </div>
+        <div>
+            <input type="password" class="rounded-md ..." id="password">
+        </div>
+        <div class="mt-6 ">
+
+            <a href="" class="text-xl font-serif "> Forgot password ?</a>
+            
+            <div class="inline ml-12">
+                <button onclick="Login()" class=" bg-fuchsia-900 text-white font-bold rounded w-[110px] h-[35px]" type="submit">Login</button>
+        </div>
+    </div>
+             
+        <div class="mt-6 mb-6" >
+            <p class="text-xl font-serif	">Don't have a account ? <a class="text-blue-600 font-serif	" href="SignUp.html">Sign Up</a> </p>
+        </div>
+    </div>
+
+    <script>
+        async function Login(){
+            const email=document.getElementById('email').value;
+            const password=document.getElementById("password").value;
+
+            const response= await fetch('http://127.0.0.1:8000/login',{
+                method:'POST',
+                credentials:"include",
+                headers:{
+                    'Content-Type':'application/json'
+                },
+                body:JSON.stringify({
+                    Email:email,
+                    Password:password
+                })
+            })
+            console.log(response);
+
+            if(response.status == '200'){
+                alert('Logged In')
+            }else if(response.status == '400'){
+                alert('Enter valid Username')
+            }else{
+                alert('Unauthorised Access')
+            }
+            
+            
+        }
+
+    </script>
+    
+</body>
+</html>
