@@ -2,6 +2,7 @@ import dotenv from "dotenv";
 import express,{json} from 'express';
 import { userauth } from "./Routes/userauth.js";
 import adminauth from "./Routes/adminauth.js";
+import cookieParser from "cookie-parser";
 
 import cors from "cors";
 import mongoose from "mongoose";
@@ -17,6 +18,7 @@ const app=express();
     credentials:true
  }))
  app.use(json())
+ app.use(cookieParser());
 
 app.use('/',userauth)  
 app.use('/',adminauth) 

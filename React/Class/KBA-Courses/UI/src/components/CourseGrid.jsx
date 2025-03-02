@@ -8,9 +8,9 @@ const CourseGrid = ({ isHome = true}) => {
  const courseList = isHome ? courses.slice(0,3) : courses;
 
   useEffect(() =>{    
-      const fetchCourses = async () => {
+      const fetchCourses = async () => { 
         try{
-          const res = await fetch ("http://localhost:5000/courses");
+          const res = await fetch ("/api/getAllCourses");
           const data = await res.json();
           setCourses(data);
         }catch(error){

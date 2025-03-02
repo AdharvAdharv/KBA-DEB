@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 
 const SignUp = () => {
-
+ 
     const [firstName,setFirstName] = useState('');
     const [lastName,setLastName] = useState('');
     const [username,setUserName] =useState('');
@@ -114,10 +114,11 @@ const SignUp = () => {
         </div>
         
         <div className="mt-6 pl-24">
-            <button className="bg-fuchsia-900 text-white font-bold rounded w-[110px] h-[35px]">Sign Up</button></div>
+            <button className="bg-fuchsia-900 text-white font-bold rounded w-[110px] h-[35px]">
+                 Sign Up</button></div>
   
         <div className="mt-3 mb-6">
-            <p>Already Have a Account ? <a  className="text-blue-600">Login</a>
+            <p>Already Have a Account ? <Link to="/Login"  className='text-blue-800 '> Login</Link>
             </p> </div>
             </form>
     </div>

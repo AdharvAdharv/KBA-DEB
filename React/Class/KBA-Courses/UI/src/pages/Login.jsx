@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {useNavigate} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 
 const Login = () => {
 
@@ -74,12 +74,14 @@ const Login = () => {
 
             <a href="" className="text-xl font-serif "> Forgot password ?</a>
             
-            <div className="inline ml-12"><button className=" bg-fuchsia-900 text-white font-bold rounded w-[110px] h-[35px]" type="submit">Login</button>
+            <div className="inline ml-12">
+                <button className=" bg-fuchsia-900 text-white font-bold rounded w-[110px] h-[35px]" type="submit">Login</button>
         </div>
     </div>
              
         <div className="mt-6 mb-6" >
-            <p className="text-xl font-serif	">Don't have a account ? <a className="text-blue-600 font-serif	" >Sign Up</a> </p>
+            <p className="text-xl font-serif	">Don't have a account ? 
+                <Link className='text-blue-700' to="/SignUp" >Signup</Link> </p>
         </div>
         </form>
     </div>

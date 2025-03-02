@@ -1,6 +1,6 @@
 function admincheck(req,res,next){
     
-    if(req.role == 'admin'){
+    if(req.role == 'Admin'){
 
         next();
     }else{

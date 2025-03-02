@@ -12,16 +12,15 @@ const sample=model ('sample1', demo)
 
 const courseDemo=new Schema({
     courseName:{type:String,required:true},
-    courseId:{type:String,required:true},
+    courseId:{type:String,required:true,unique:true},
     courseType:{type:String,required:true},
-    price:{type:String,required:true},
+    price:{type:Number,required:true},
     Description:{type:String,required:true},
     Image:String
 
 })
 
 
-const courseSample=model ('sample2',courseDemo)
+const courseSample=model ('Courses',courseDemo)
 
-export {courseSample}
-export  {sample};
+export {courseSample ,sample}
