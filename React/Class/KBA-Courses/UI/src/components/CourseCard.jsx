@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import courseImage from '../assets/images/courseImage.jpeg'
 
  
-const CourseCard = ({course}) => {
+const CourseCard = ({course}) => {  
   
   const [showFullDescription,setFullDescription] =useState(false)
 

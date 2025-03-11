@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link,useNavigate } from 'react-router-dom'
 
 
 const SignUp = () => {
@@ -16,7 +16,7 @@ const SignUp = () => {
     const handleSignup = async (e) =>{
         e.preventDefault();
         try{
-            const response = await fetch('/api/signup',{
+            const response = await fetch('/api/signup/',{
                 method:'POST',
                 credentials:'include',
                 headers: {
@@ -42,9 +42,7 @@ const SignUp = () => {
             
         }
     }
-
-
-    
+  
   return (
     <div className="flex justify-center mt-20">
     <div className="bg-slate-400 w-96 h-auto pl-12 font-serif text-xl rounded-md ">
@@ -108,8 +106,8 @@ const SignUp = () => {
          onChange={(e) => setUserRole(e.target.value) }
          required
         >
-        <option>User</option>
-        <option>Admin</option>
+        <option value="user">User</option>
+        <option value="Admin">Admin</option>
         </select>
         </div>
         

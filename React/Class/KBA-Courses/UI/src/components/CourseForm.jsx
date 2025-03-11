@@ -50,7 +50,7 @@ const CourseForm = ({heading}) => {
    <div className="flex justify-center">
          <div className="bg-gray-400 w-[600px] h-[670px] mt-12 font-sans font-semibold  pt-6 pl-12 rounded">
             <p className="text-center text-3xl text-fuchsia-900 font-bold font-serif">   
-               {heading ? "Add Course": "Update Course"}
+               { heading ? "Add Course": "Update Course"}
             </p>
             <form onSubmit={handleSubmit}>
             <label >Course Name</label>
