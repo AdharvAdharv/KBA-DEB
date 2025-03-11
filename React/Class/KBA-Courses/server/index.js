@@ -10,8 +10,8 @@ import mongoose from "mongoose";
 
 
 dotenv.config();
-
 const app=express();
+
 
  app.use(cors({
     origin:'http://127.0.0.1:5501',
@@ -39,9 +39,3 @@ mongoose.connect('mongodb://localhost:27017/KBACourses').then(()=>{
 app.listen(process.env.PORT,function(){
     console.log(`service is listening at ${process.env.PORT}`);
     });
-
- 
-
-app.get('/',function(req,res){
-    res.send('hi ');
-})

@@ -50,8 +50,6 @@ const Login = () => {
 
             <input className="rounded-md bg-white" 
             type="text"
-            id='username'
-            name='UserName'
             value={username}
             onChange={(e) => setUsername(e.target.value) }
             required
@@ -63,8 +61,6 @@ const Login = () => {
         <div>
             <input type="password" 
             className="rounded-md bg-white"
-            id='password'
-            name='Password'
             value={password}
             onChange={ (e) =>setPassword(e.target.value)}
             required

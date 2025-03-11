@@ -29,7 +29,7 @@ const CourseGrid = ({ isHome = true}) => {
     </h1>
 
     {loading ? (
-      <h1>Loading...</h1>
+      <h1>Loading...</h1> 
     ):
 
     <div className="grid grid-cols-3 gap-5  mt-16">
