@@ -4,7 +4,7 @@ import FundraiserCard from './FundraiserCard'
 const FundraiserGrid = () => {
 
   const [campaign,setCampaign] =useState([])
-  const [loading,setLoading] =useState(true)
+  const [loading,setLoading] =useState(true)   
 
    useEffect( ()=>{
     const fetchCampaign= async ()=>{

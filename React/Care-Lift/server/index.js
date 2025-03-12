@@ -17,7 +17,7 @@ app.use(cors({
 
 app.use(json());
 app.use(cookieParser())
-
+  
 app.use('/',userauth)
 // mongodb
 

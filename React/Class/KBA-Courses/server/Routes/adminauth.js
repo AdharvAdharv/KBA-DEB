@@ -71,29 +71,7 @@ adminauth.get('/getAllCourses',async (req,res) =>{
   }
 })
 
-
-// adminauth.get('/getCourse',async (req,res)=>{
-//   try{
-//     console.log('hi');
-    
-//   const Name =req.query.CourseName;
-//   console.log(Name);
-
-//   const result= await courseSample.findOne({courseName:Name});
-   
-//   if(result){
-//     console.log(result);
-//     res.status(200).send(result)
-    
-//   }else{
-//     console.log("Course not exist");
-//     res.status(404).send("Course not exist")
-    
-//   }
-//   }catch{
-//     res.status(500).send('Internal server error')
-//   }
-// })
+  
 
 
 adminauth.get('/getCourse', async (req,res) =>{
