@@ -202,7 +202,7 @@ userauth.get("/getAllFundraising",async (req,res) =>{
     try{
         const Campaign= await Details.find({});
         res.json(Campaign)
-
+  
     }catch(err){
         console(err);
         res.status(500).json({msg:"Internal Server Error"})
