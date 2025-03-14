@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page    </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body>
+
+    <nav class="w-auto h-[90px] bg-slate-400 flex justify-between pl-12 ">
+        <img src="./Assets/logo.jpg" alt="logo">
+        <div class="text-white font-black text-2xl my-auto">
+        <a class="mr-[50px]" href="HomePage.html">Home</a>
+        <a class="mr-[50px]" href="Fundraising 1.html">Start a Campaign</a>
+        <a class="mr-[50px]" href="How it works.html">How it Works</a>
+        <a class="mr-[50px]" href="AboutUs.html">About Us</a>
+        <a class="mr-[50px]" href="Login.html">Login</a>
+       </div>
+</nav>
+
+<div class="h-[600px] bg-gradient-to-t from-blue-600 to-white w-full  ">
+    
+    <div class="mt-10 flex justify-center" >  <!-- div for input field and button -->
+    <input class="h-[40px] w-[600px] ring ring-black rounded-3xl pl-12" type="text" placeholder="Search here" >
+    <button class="h-[40px] w-[150px] ring ring-black rounded-xl ml-[60px] bg-slate-400"> <span class="text-2xl font-black">Search</span> </button>
+    </div>
+     
+    <!-- left and right side of the body -->
+    <div class="flex justify-between">
+    <!-- left side of body -->
+     <div class=" grid ml-[100px]  mt-[70px]">
+        <p class="font-black text-5xl font-serif  ">Need Fund for Your <br> Medical Treatment ? </p>
+        <p class="text-white text-2xl font-bold ">Raise Money to pay hospital & <br> Medical bills for free.</p>
+        <button class=" bg-white w-[250px] h-[50px] rounded-xl "><a class=" text-xl font-bold " href="Fundraising 1.html">Start a free Fundraiser</a></button>
+        <button class="bg-green-600 w-[250px] h-[50px] rounded-xl " ><a  class="text-white text-xl font-bold  " href="ContactUs.html" >Contact Us</a></button>
+     
+    </div>
+      <!-- div for image -->
+     <div class="pr-[150px] ">
+        <img class="mt-[150px]" src="/Crowdfunding /Assets/charity4.png" alt="">
+     </div> 
+    </div> 
+</div>
+
+<!-- div for fundraisers -->
+ <div class="mt-[100px] grid  grid-cols-3 gap-[50px] ">
+    <!-- Fundraiser 1 -->
+     <div class="bg-slate-400 w-[400px] h-[500px] rounded " onclick="window.location.href='./Patient Details.html';" >
+        <img  class=" w-[400px] rounded-xl" src="./Assets/patient image.jpeg" alt="image">
+        <p class="text-xl font-bold m-[10px]  ">Sarath is fighing to still Alive </p>
+
+        <div class="flex justify-between font-serif px-[20px] ">
+            <p>Funds required</p>
+            <p>Campaign ends in </p>
+        </div>
+
+        <div class="flex justify-between px-[20px] ">
+            <p class="text-red-700 font-bold">Rs.250000</p>
+            <p class="text-orange-500">21 Days</p>
+        </div>
+        <!-- progress bar -->
+        <div class="w-[350px] h-3 mt-3 bg-gray-200 rounded ring-2 ring-black mx-[20px]">
+            <!-- Progress Indicator -->
+            <div class="h-full bg-blue-500 rounded" style="width: 70%;"></div>
+        </div>
+      
+        
+        <button class="bg-cyan-400 h-[50px]  w-[250px] mt-[50px] mx-[70px] flex justify-center place-items-center rounded-xl" > 
+            <img class="w-[40px]" src="./Assets/heart-solid.svg" alt="">
+            <a class="text-2xl font-bold text-white ml-5 " href="Patient Details.html" >CONTRIBUTE </a></button>
+
+     </div>
+
+      <!-- Fundraiser 2 -->
+      <div class="bg-slate-400 w-[400px] h-[500px] rounded "  onclick="window.location.href='./Patient Details.html';">
+        <img  class=" w-[400px] rounded-xl" src="./Assets/patient image.jpeg" alt="image">
+        <p class="text-xl font-bold m-[10px]  ">Sarath is fighing to still Alive </p>
+
+        <div class="flex justify-between font-serif px-[20px] ">
+            <p>Funds required</p>
+            <p>Campaign ends in </p>
+        </div>
+
+        <div class="flex justify-between px-[20px] ">
+            <p class="text-red-700 font-bold">Rs.250000</p>
+            <p class="text-orange-500">21 Days</p>
+        </div>
+        <!-- progress bar -->
+        <div class="w-[350px] h-3 mt-3 bg-gray-200 rounded ring-2 ring-black mx-[20px]">
+            <!-- Progress Indicator -->
+            <div class="h-full bg-blue-500 rounded" style="width: 70%;"></div>
+        </div>
+
+        <button class="bg-cyan-400 h-[50px]  w-[250px] mt-[50px] mx-[70px] flex justify-center place-items-center rounded-xl" > 
+            <img class="w-[40px]" src="./Assets/heart-solid.svg" alt="">
+            <span class="text-2xl font-bold text-white ml-5 " >CONTRIBUTE </span></button>
+
+     </div>
+
+      <!-- Fundraiser 3 -->
+      <div class="bg-slate-400 w-[400px] h-[500px] rounded  " onclick="window.location.href='./Patient Details.html';">
+        <img  class=" w-[400px] rounded-xl" src="./Assets/patient image.jpeg" alt="image">
+        <p class="text-xl font-bold m-[10px]  ">Sarath is fighing to still Alive </p>
+
+        <div class="flex justify-between font-serif px-[20px] ">
+            <p>Funds required</p>
+            <p>Campaign ends in </p>
+        </div>
+
+        <div class="flex justify-between px-[20px] ">
+            <p class="text-red-700 font-bold">Rs.250000</p>
+            <p class="text-orange-500">21 Days</p>
+        </div>
+        <!-- progress bar -->
+        <div class="w-[350px] h-3 mt-3 bg-gray-200 rounded ring-2 ring-black mx-[20px]">
+            <!-- Progress Indicator -->
+            <div class="h-full bg-blue-500 rounded" style="width: 70%;"></div>
+        </div>
+
+        <button class="bg-cyan-400 h-[50px]  w-[250px] mt-[50px] mx-[70px] flex justify-center place-items-center rounded-xl" > 
+            <img class="w-[40px]" src="./Assets/heart-solid.svg" alt="">
+            <span class="text-2xl font-bold text-white ml-5 " >CONTRIBUTE </span></button>
+
+     </div>
+
+
+ </div>
+ 
+ <div class="h-[200px] grid justify-center">
+
+     <button class="ring ring-black bg-gray-00 w-[250px] h-[50px] rounded-xl mt-[50px] "><a class=" text-xl text-blue-700 font-bold  " href="Fundraising 1.html">Start a free Fundraiser</a></button>
+     <button class="bg-green-600 w-[250px] h-[50px] rounded-xl " ><a  class="text-white text-xl font-bold " href="ContactUs.html">Contact Us</a></button>
+ </div> 
+ <footer class="h-[150px] bg-stone-400 pt-[50px]">
+
+    <p class="flex justify-center text-sm"> © 2024 CareLift.All rights reserved</p>
+        
+
+ </footer>
+    
+</body>
+</html>

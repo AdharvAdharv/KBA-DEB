@@ -2,11 +2,35 @@ import React, { useState } from 'react'
 import { Link,useNavigate } from 'react-router-dom';
 
 import Logo from '../assets/Images/Logo.png'
+import { useEffect } from 'react';
 
 
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [isLoggedIn,setIsLoggedIn]=useState(false);
     const navigate = useNavigate();
+
+
+    useEffect(()=>{
+
+      const checkauth= async()=>{
+        try{
+          const res= await fetch('/api/checkauthentication',{
+            method:'GET',
+            credentials:"include"
+          })
+          if(res.ok){
+            setIsLoggedIn(true)
+          }else{
+            setIsLoggedIn(false)
+          }
+
+          }catch(error){
+             console.error('Error in checking auth status',error);
+          }
+      }
+      checkauth();
+    },[]);
 
     const handleNavigation = async (event) => {
       const value = event.target.value;
@@ -57,13 +81,16 @@ const Navbar = () => {
             <Link to="/formfundraiser" className="text-white text-lg">Start a Campaign</Link>
             <Link to='/howitworks' className="text-white text-lg">How it Works</Link>
             <Link to="/aboutus" className="text-white text-lg">About Us</Link>
+            {isLoggedIn ? (
             <select className="bg-transparent ring ring-white text-black p-2 rounded"
             onChange={handleNavigation}>
                 <option value="">Select Option</option>
                 <option value="/myfundraising">My Fundraiser</option>
                 <option value="/contactus">Contact Us</option>
                 <option value="logout">Logout</option>
-            </select>
+            </select>  ) :(
+              <Link to="/login" className="text-white text-lg">Login</Link>
+            )}
         </div>
     </nav>
     </div>

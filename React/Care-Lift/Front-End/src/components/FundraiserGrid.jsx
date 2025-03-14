@@ -27,7 +27,7 @@ const FundraiserGrid = () => {
 
   return (
     <>
-    <div class=" mt-[100px] ml-[30px] grid sm:grid-cols-1  md:grid-cols-3 gap-[40px] mb-[50px]">
+    <div class=" mt-[100px] ml-[30px] grid sm:grid-cols-1  md:grid-cols-2 lg:grid-cols-3  gap-[40px] mb-[50px]">
 
       { 
       loading ? (<p>Loading...</p>):(

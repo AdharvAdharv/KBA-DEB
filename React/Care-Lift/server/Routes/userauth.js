@@ -87,6 +87,24 @@ userauth.post('/login',async(req,res)=>{
         
         res.status(500).send('Internal Server Error')
     }
+}) 
+
+userauth.get('/checkauthentication',(req,res)=>{
+    try{
+        const token=req.cookies.authToken;
+        if(!token){
+            return res.status(401).json({isLoggedIn:false})
+        }
+        jwt.verify(token, process.env.SECRET_KEY, (err, decoded) => {
+            if (err) {
+                return res.status(401).json({ isAuthenticated: false });
+            }
+            res.status(200).json({ isAuthenticated: true, user: decoded.userName });
+        });
+
+    }catch(error){
+        console.error('Error in checking authentication in (NAVBAR)')
+    }
 })
 
 
@@ -209,13 +227,35 @@ userauth.get("/getAllFundraising",async (req,res) =>{
     }
 })
 
+userauth.get('/searchpatient', async (req, res) => {
+    try {
+        const { name } = req.query; // Get search query
+
+        if (!name) {
+            return res.status(400).json({ message: "Patient name is required." });
+        }
+
+        // Search patients whose names contain the search term (case-insensitive)
+        const patients = await Details.find({patientName:name });
+
+        if (patients.length === 0) {
+            return res.status(404).json({ message: "No patients found." });
+        }
+
+        res.json(patients);
+    } catch (error) {
+        console.error("Error searching for patient:", error);
+        res.status(500).json({ message: "Server error. Please try again later." });
+    }
+});
+
 
 
 userauth.get('/getfundraising/:id',async(req,res)=>{
   
     try {
         const fundraiser = await Details.findOne({ patientId:req.params.id });
-        console.log(fundraiser);
+        console.log("Patient ID:",fundraiser.patientId,"Patient Name :", fundraiser.patientName);
         
         if (!fundraiser) {
             return res.status(404).json({ msg: "Fundraiser not found" });
@@ -268,7 +308,7 @@ userauth.delete('/stopfundraising',authenticate,async(req,res)=>{
     }
 })
 
-userauth.post('/contribute', authenticate, async (req,res) => {
+userauth.post('/contribute', async (req,res) => {
     const { PatientID, PNAME, Name, Amount } = req.body;
     try {
       const patient = await Details.findOne({ patientId:PatientID });
@@ -316,7 +356,7 @@ userauth.post('/contribute', authenticate, async (req,res) => {
     }
   });
   
-  userauth.get('/contributions/:patientId', authenticate, async (req, res) => {
+  userauth.get('/contributions/:patientId',async (req, res) => {
     const { patientId } = req.params;
     try {
      

@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const Contribution = () => {
-  const [selectedPayment, setSelectedPayment] = useState("");
-  const [patientID, setPatientID] = useState("");
-  const [pname, setPname] = useState("");
+  const {id,patientName}=useParams();  //getting patient id from URL 
+console.log(id,patientName);
+
+  const [patientID, setPatientID] = useState(id);
+  const [pname, setPname] = useState(patientName);
   const [name, setName] = useState("");
   const [amount, setAmount] = useState("");
+  const [selectedPayment, setSelectedPayment] = useState("");
   
   const navigate = useNavigate();
 
