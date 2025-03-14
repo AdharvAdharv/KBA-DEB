@@ -23,7 +23,7 @@ const App = () => {
     <>
     <BrowserRouter >
        <Routes >
-        <Route path='/' element={<Navigate to='/login'/> } />
+        <Route path='/' element={<Navigate to='/homepage'/> } />
         <Route path='/signup' element={<Signup />} />
         <Route path='/login' element={<Login />} />
         <Route path='/homepage' element={<Homepage />} />
@@ -32,7 +32,7 @@ const App = () => {
         <Route path='/aboutus' element={<AboutUs />} />
         <Route path='/contactus' element={<ContactUs />} />
         <Route path='/myfundraising' element={<MyFundraiser />} />
-        <Route path='/contribute' element={<Contribution />} />
+        <Route path='/contribute/:id/:patientName' element={<Contribution />} />
         <Route path='/formfundraiser' element={ <FormFundraiser />} />
         <Route path='/formpatientdetails' element={<FormPatientDetails />} />
         <Route path='/formtestimony' element={<FormTestimony />} />

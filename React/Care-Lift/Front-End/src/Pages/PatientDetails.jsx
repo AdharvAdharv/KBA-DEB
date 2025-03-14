@@ -6,7 +6,7 @@ import whatsappLogo from '../assets/Images/WhatsApp logo.png'
 import ContributeLogo from '../assets/Images/heart-solid.svg'
 import Footer from '../components/Footer';
 
-const PatientDetails = () => {
+const PatientDetails = () => { 
 
     const {id} = useParams(); //Getting patient id from URL
     const [patient,setPatient]= useState(null);
@@ -39,6 +39,14 @@ const PatientDetails = () => {
     const medicalDocuments = patient?.image2? patient.image2.startsWith("data:image")
       ? patient.image2: `data:image/jpeg;base64,${patient.image2}`: "/placeholder-image.jpg";
 
+      const handleContribute= ()=>{
+        if(patient.patientId){
+          navigate(`/contribute/${patient.patientId}/${patient.patientName}`)
+        }else{
+          alert("Patient Id not found")
+        }
+      }
+
       const handleContributions = () => {
         // Navigate to the contributions route with the patientId as a parameter
         if (patient.patientId) {
@@ -64,11 +72,13 @@ const PatientDetails = () => {
             {/* right side of the image  */}
             <div className="w-[700px]  place-items-center  ">
                 
-                <Link to='/contribute'>
-                <button className="bg-cyan-400 h-[70px]  w-[400px] mt-[50px] flex justify-center place-items-center rounded-xl" > 
+                
+                <button 
+                onClick={handleContribute}
+                className="bg-cyan-400 h-[70px]  w-[400px] mt-[50px] flex justify-center place-items-center rounded-xl" > 
                 <img className="w-[40px]" src={ContributeLogo} alt="" />
-                <a href="Contribute.html" className="text-2xl font-bold text-white ml-5 " >CONTRIBUTE </a></button>
-                </Link>
+                <span className="text-2xl font-bold text-white ml-5 " >CONTRIBUTE </span></button>
+               
                 
                 <button  
                  onClick={handleContributions}
@@ -131,7 +141,7 @@ const PatientDetails = () => {
            
             <Link to='/contribute'>
             <button className="bg-cyan-400 w-[250px] h-[50px] rounded-xl " >
-            <a  href="Contribute.html" className="text-white text-xl font-bold " >CONTRIBUTE NOW</a></button>
+            <span className="text-white text-xl font-bold " >CONTRIBUTE NOW</span></button>
             </Link>
 
           </div>

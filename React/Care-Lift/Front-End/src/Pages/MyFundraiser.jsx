@@ -61,6 +61,16 @@ const MyFundraiser = () => {
       alert("Patient ID not found");
     }
   }
+    
+  const handleContribute= ()=>{
+    if(patient.patientId){
+      navigate(`/contribute/${patient.patientId}/${patient.patientName}`)
+    }else{
+      alert("Patient Id not found")
+    }
+  }
+
+
   return (
     <>
          
@@ -139,11 +149,13 @@ const MyFundraiser = () => {
                 <img className="w-[30px]" src={facebookLogo} alt="image" />
             <span  className="text-white text-2xl font-bold " >SHARE</span></button>
 
-            <Link to='/contribute'>
-            <button className="bg-cyan-400 w-[250px] h-[50px] rounded-xl " >
+            
+            <button
+             onClick={handleContribute}
+            className="bg-cyan-400 w-[250px] h-[50px] rounded-xl " >
             <span className="text-white text-xl font-bold " >CONTRIBUTE NOW</span>
             </button>
-            </Link>
+          
 
           </div>
         </div>
