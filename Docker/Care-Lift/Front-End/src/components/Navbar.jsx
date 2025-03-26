@@ -17,7 +17,7 @@ const Navbar = () => {
         try{
           const res= await fetch('/api/checkauthentication',{
             method:'GET',
-            credentials:"include"
+            credentials:"include" //Ensure cookies are sent 
           })
           if(res.ok){
             setIsLoggedIn(true)
