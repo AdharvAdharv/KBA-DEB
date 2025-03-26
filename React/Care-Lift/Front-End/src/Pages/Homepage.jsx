@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -11,10 +11,11 @@ const Homepage = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const fundraiserRef = useRef(null); // Create a reference
 
   const handleInputChange = (e) => {
     setPatientName(e.target.value);
-    setError();
+    setError("");
   };
 
   const SearchPatient = async () => {
@@ -31,9 +32,18 @@ const Homepage = () => {
       if (!response.ok) {
         throw new Error("Failed to fetch patient data");
       }
+      
+      
       const data = await response.json();
 
       setSearchResults(data);
+      console.log(searchResults);
+
+      // Scroll to FundraiserGrid after fetching data
+      if (fundraiserRef.current) {
+        fundraiserRef.current.scrollIntoView({ behavior: "smooth" });
+      }
+      
     } catch (err) {
       setError("Failed to fetching patient details. Please try again.");
     } finally {
@@ -46,7 +56,7 @@ const Homepage = () => {
       <Navbar />
 
      
-      <div className="h-[600px] bg-gradient-to-t from-blue-600 to-white w-full   relative">
+      <div className=" h-[600px] bg-gradient-to-t from-blue-600 to-white w-full relative">
         {/* div for input field and button  */}
         <div className="mt-10 flex justify-center relative w-max m-auto">
           <input
@@ -61,7 +71,7 @@ const Homepage = () => {
             onClick={SearchPatient}
             className="h-[40px] w-[150px] ring ring-black rounded-xl ml-[60px] bg-slate-400"
           >
-            <span className="text-2xl font-bold">Search</span>{" "}
+            <span className="text-2xl font-bold">Search</span>
           </button>
 
           {error && (
@@ -71,7 +81,7 @@ const Homepage = () => {
           )}
         </div>
 
-        {/* Search Results */}
+        
         <div className="mt-5 flex justify-center relative">
           {loading && <p className="text-lg text-gray-600">Loading...</p>}
         </div>
@@ -79,11 +89,11 @@ const Homepage = () => {
         
 
         {/* left and right side of the body */}
-        <div className="flex justify-between ">
+        <div className="flex justify-between relative">
           {/* left side of body */}
-          <div className=" flex flex-col gap-8 ml-[100px]  mt-[70px]">
+          <div className=" flex flex-col gap-6 ml-[100px]  mt-[70px]">
             <p className="font-black text-5xl font-serif  ">
-              Need Fund for Your <br></br> Medical Treatment ?{" "}
+              Need Fund for Your <br></br> Medical Treatment ?
             </p>
             <p className="text-white text-2xl font-bold ">
               Raise Money to pay hospital & <br></br>
@@ -106,18 +116,22 @@ const Homepage = () => {
               </button>
             </Link>
           </div>
+            </div>
           {/* div for image */}
-          <div className="pr-[150px] absolute right-[50px] bottom-[0px] ">
+          <div className="pr-[150px] absolute right-[50px] bottom-0 ">
             <img
-              className=" sm:hidden md:block "
+              className="mt-[150px] sm:hidden md:flex "
               src={MainImage}
               alt="image"
             />
-          </div>
         </div>
       </div>
+       
+        {/* Fundraiser Grid with Ref */}
+      <div ref={fundraiserRef}>
+      <FundraiserGrid   patientName={patientName}/>
+      </div>
 
-      <FundraiserGrid />
       <Footer />
     </div>
   );

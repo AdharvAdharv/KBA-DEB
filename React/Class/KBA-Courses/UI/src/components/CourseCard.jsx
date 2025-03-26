@@ -6,7 +6,7 @@ const CourseCard = ({course}) => {
   
   const [showFullDescription,setFullDescription] =useState(false)
 
-  const description = showFullDescription ? course.description : course.description.substring(0,80)
+  const description = showFullDescription ? course.description : course.description
   return (
     <div className="w-[400px] h- bg-stone-400 pt-6 rounded ml-12 place-items-center ">
     <div className="place-items-center ">

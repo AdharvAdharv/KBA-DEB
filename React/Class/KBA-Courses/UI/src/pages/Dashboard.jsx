@@ -1,5 +1,5 @@
 import React ,{useState , useEffect} from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Dashboard = () => {
 
@@ -31,7 +31,8 @@ const Dashboard = () => {
 
   return (
     <div>
-        <p className='text-3xl font-bold mt-6 ml-10'>Dashboard</p>
+        <Link className='m-[50px] text-xl font-semibold text-blue-700' to='/home'> Home</Link>
+        <p className='text-3xl font-bold mt-10 ml-10'>Dashboard</p>
         {error && <p className='text-red-600' >{error} </p>}
        {
         profile ? (

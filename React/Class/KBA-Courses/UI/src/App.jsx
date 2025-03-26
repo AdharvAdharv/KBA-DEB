@@ -3,6 +3,7 @@ import Login from "./pages/Login.jsx";
 import SignUp from "./pages/SignUp.jsx";
 import Dashboard from './pages/Dashboard'
 import AddCourse from './pages/AddCourse.jsx'
+import Home from './pages/Home.jsx'
 
 import { BrowserRouter, Routes, Route,Navigate, Router } from "react-router-dom";     
 
@@ -16,6 +17,7 @@ const App = () => {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/addcourse" element={<AddCourse />} />
+          <Route path="/home" element={<Home />} />
 
         </Routes>
       </BrowserRouter>

@@ -12,6 +12,7 @@ const CourseGrid = ({ isHome = true}) => {
         try{
           const res = await fetch ("/api/getAllCourses");
           const data = await res.json();
+         
           setCourses(data);
         }catch(error){
           console.log(error);
@@ -30,16 +31,16 @@ const CourseGrid = ({ isHome = true}) => {
 
     {loading ? (
       <h1>Loading...</h1> 
-    ):
+    ):(
 
-    <div className="grid grid-cols-3 gap-5  mt-16">
+    <div className="grid grid-cols-3 gap-5 mt-16">
     
     { courseList.map((course) => (
       <CourseCard key={courseList.CourseID} course={course} />
     ))
 
     }
-    </div>
+    </div>)
   }
     </>
   )

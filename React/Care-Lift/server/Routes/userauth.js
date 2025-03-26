@@ -222,7 +222,7 @@ userauth.get("/getAllFundraising",async (req,res) =>{
         res.json(Campaign)
   
     }catch(err){
-        console(err);
+        console.log(err);
         res.status(500).json({msg:"Internal Server Error"})
     }
 })
@@ -230,6 +230,7 @@ userauth.get("/getAllFundraising",async (req,res) =>{
 userauth.get('/searchpatient', async (req, res) => {
     try {
         const { name } = req.query; // Get search query
+console.log(name);
 
         if (!name) {
             return res.status(400).json({ message: "Patient name is required." });
@@ -238,7 +239,7 @@ userauth.get('/searchpatient', async (req, res) => {
         // Search patients whose names contain the search term (case-insensitive)
         const patients = await Details.find({patientName:name });
 
-        if (patients.length === 0) {
+        if (patients.length == 0) {
             return res.status(404).json({ message: "No patients found." });
         }
 
