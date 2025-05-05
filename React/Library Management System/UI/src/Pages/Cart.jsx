@@ -5,10 +5,12 @@ import Footer from '../Components/Footer'
 
 const Cart = () => {
   return (
-    <div className='bg-red-100'>
-        <Navbar />
+    <div className="min-h-screen flex flex-col bg-red-100">
+      <Navbar />
+      <div className="flex-grow">
         <CartGrid />
-        <Footer />
+      </div>
+      <Footer />
     </div>
   )
 }

@@ -5,11 +5,11 @@ import Footer from '../Components/Footer'
 
 const Books = () => {
   return (
-    <>
+    <div className='bg-red-100'>
     <Navbar />
     <BookGrid />
     <Footer />
-    </>
+    </div>
   )
 }
 

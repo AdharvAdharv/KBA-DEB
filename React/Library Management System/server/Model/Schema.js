@@ -1,5 +1,6 @@
-import { model } from "mongoose";
-import { Schema } from "mongoose";
+import mongoose , { model,Schema } from "mongoose";
+
+
 
 const userdetails = new Schema({
     name:{type:String,required:true},
@@ -14,9 +15,30 @@ const Bookdetails= new Schema({
     authorName:{type:String,required:true},
     genre:{type:String,required:true},
     description:{type:String,required:true},
-    price:{type:String,required:true}
-})
+    price:{type:Number,required:true}
+},{ timestamps: true })
 const Books = model ('Books',Bookdetails)
 
-export {Books}
-export {User}
+const cartSchema = new Schema({
+    userId: { type: String, required: true },
+    bookId: { type: mongoose.Schema.Types.ObjectId, ref: 'Books' },
+    bookName: String,
+    price: Number,
+    quantity: { type: Number, default: 1 },
+  });
+  const Cart = model('Cart', cartSchema);
+  
+
+  const orderSchema = new Schema({
+    userId: { type: String, required: true },
+    bookId: { type: mongoose.Schema.Types.ObjectId, ref: 'Books' },
+    bookName: String,
+    price: Number,
+    orderDate: { type: Date, default: Date.now }
+  });
+  const Order = model('Order', orderSchema);
+  
+ 
+  
+  
+export { Cart , Books , User , Order }

@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
     <div>
-         <footer className="w-full bg-red-900 text-white py-6 mt-20">
+         <footer className="w-full bg-red-900 text-white py-6 mt-20 sticky">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center px-6">
         
         {/* Left Section: Logo & Name */}
@@ -21,7 +21,9 @@ const Footer = () => {
         <Link className="mr-[50px] hover:underline" to='/homepage' >Home</Link>
         <Link className="mr-[50px] hover:underline" to="/books">Books</Link>
         <Link className="mr-[50px] hover:underline" to="/cart" >Cart</Link>
+        <Link className="mr-[50px] hover:underline" to='/yourOrder'>Orders</Link>
         <Link className="mr-[50px] hover:underline" to='/login'>Logout</Link>
+
         </div>
         
         {/* Right Section: Social Media */}

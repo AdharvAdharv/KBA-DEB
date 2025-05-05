@@ -4,7 +4,7 @@ function authenticate(req,res,next){
     console.log('auth page');
 
     const cookie=req.headers.cookie;
-    console.log(cookie);
+    
     
     if(!cookie){
         res.status(401).send('Please login to contunue')
@@ -17,10 +17,10 @@ function authenticate(req,res,next){
         
         if(name == 'authToken'){
             const varified=jwt.verify(token,process.env.SECRET_KEY)
-            console.log(varified);
             
-            req.user=varified.UserName;
-            req.role=varified.UserRole;
+            
+            req.user=varified.UserId;
+            req.role=varified.role;
             next();
             
 

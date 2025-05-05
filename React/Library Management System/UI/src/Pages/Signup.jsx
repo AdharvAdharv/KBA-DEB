@@ -19,7 +19,6 @@ const Signup = () => {
             name,
             email,
             password,
-            role
           },
           {
             withCredentials:true,
@@ -45,7 +44,7 @@ const Signup = () => {
         className="flex justify-center  bg-cover bg-center h-screen "
         style={{ backgroundImage: `url(${bgimage})` }}
       >
-        <div className="bg-white opacity-80 w-96 h-[560px] pr-4 pl-12 rounded-md mt-10 ">
+        <div className="bg-white opacity-80 w-96 h-[500px] pr-4 pl-12 rounded-md mt-10 ">
           <p className="font-black text-4xl font-serif text-center mt-6	">
             SignUp
           </p>
@@ -77,15 +76,7 @@ const Signup = () => {
             onChange={(e) =>setPassword(e.target.value)}
             required
           />
-          <select
-              className="rounded-md ring ring-black w-[290px] h-[30px] mt-6 mb-6 "
-              value={role}
-              onChange={(e) =>setRole(e.target.value)}
-              
-            >
-              <option value="user">User</option>
-              <option value="admin">Admin</option>
-            </select>
+          
 
           <button
             className=" bg-red-900 text-white font-bold rounded-3xl w-[290px] h-[35px] mt-6 mx-auto"

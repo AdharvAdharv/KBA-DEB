@@ -3,11 +3,12 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
 import { User } from "../Model/Schema.js";
+import { authenticate } from "../Middleware/auth.js";
 const userauth = Router();
 
 userauth.post("/signup", async (req, res) => {
   try {
-    const {  name,email,password,role} = req.body;
+    const {  name,email,password} = req.body;
     
 
     const existingUser = await User.findOne({ email });
@@ -23,7 +24,7 @@ userauth.post("/signup", async (req, res) => {
         name,
         email,
         password:hashedPassword,
-        role
+        role:"user"
       });
       await NewUser.save();
       console.log("---------sign up----------");
@@ -51,9 +52,10 @@ userauth.post("/login", async (req, res) => {
 
       if (valid) {
         const token = jwt.sign(
-          { email:email},
+          {  UserId: result._id,
+            role:result.role},
           process.env.SECRET_KEY,
-          { expiresIn: "1h" }
+          { expiresIn: "24h" }
         );
         console.log(token);
         res.cookie("authToken", token, {
@@ -69,6 +71,25 @@ userauth.post("/login", async (req, res) => {
   } catch {
     res.status(500).send("Internal Server Error");
   }
+});
+
+
+
+// Route to check if the user is logged in and get their role
+userauth.get('/check-auth', authenticate, (req, res) => {
+  try {
+    // The authenticate middleware will set `req.user` and `req.role`
+    return res.status(200).json({ role: req.role });
+  } catch (error) {
+    console.error('Error checking auth status:', error);
+    return res.status(500).send('Internal Server Error');
+  }
+});
+
+// Logout route to clear the auth cookie
+userauth.post('/logout', (req, res) => {
+  res.clearCookie('authToken', { httpOnly: true });
+  res.status(200).send('Logged out successfully');
 });
 
 export { userauth };

@@ -36,7 +36,7 @@ adminauth.post('/addbook',authenticate,admincheck,async(req,res)=>{
 
         }else{
             res.status(403).send('You are not allowed to do this')
-        }
+        }  
 
     }catch{
         res.status(500).send('Internal server Error')
@@ -44,8 +44,25 @@ adminauth.post('/addbook',authenticate,admincheck,async(req,res)=>{
     
 })
 
+adminauth.get('/getallbook', async (req, res) => {
+  try {
+    const books = await Books.find();
 
-adminauth.get('/showBook',authenticate,async(req,res)=>{
+    if (books && books.length > 0) {
+      res.status(200).json(books);
+    } else {
+      res.status(404).send("No books found");
+    }
+
+  } catch (error) {
+    console.error("Error fetching books:", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
+
+
+adminauth.get('/getbook',authenticate,async(req,res)=>{
   try{
     console.log('-----Show Book Page----');
     

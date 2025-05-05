@@ -6,6 +6,8 @@ import Cart from "./Pages/Cart"
 import Homepage from "./Pages/Homepage"
 import Login from "./Pages/Login"
 import Signup from "./Pages/Signup"
+import BuyBook from './Pages/BuyBook'
+import YourOrders from './Pages/YourOrders'
 
 
 function App() {
@@ -23,6 +25,9 @@ function App() {
     <Route path='/books'    element={<Books />} />
     <Route path='/addbook'  element={<AddBook />} />
     <Route path='/cart'     element={<Cart />} />
+    
+    <Route path="/buy/:id" element={<BuyBook/>} />
+    <Route path="/yourOrder" element={<YourOrders/>} />
 
    </Routes>
    </BrowserRouter>
