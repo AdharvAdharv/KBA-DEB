@@ -3,12 +3,20 @@ import { authenticate } from "../Middleware/auth.js";
 
 import { Books } from "../Model/Schema.js";
 import admincheck from "../Middleware/admincheck.js";
+import { upload } from "../Middleware/Multer.js";
 
 const adminauth=Router();
 
+const ConvertToBase64=(buffer)=>{
+  return buffer.toString("base64");
+}
 
 
-adminauth.post('/addbook',authenticate,admincheck,async(req,res)=>{
+
+adminauth.post('/addbook',authenticate,admincheck,upload.fields(
+  [{name:'bookImage',maxCount:1},
+     
+  ]),async(req,res)=>{
     console.log("add book page");
 
     try{
@@ -22,12 +30,19 @@ adminauth.post('/addbook',authenticate,admincheck,async(req,res)=>{
                 console.log('Book Name already exist');
                 
               }else{
+
+                let imageBase64_1=null;
+                if(req.files && req.files['bookImage']){
+                  imageBase64_1= ConvertToBase64(req.files['bookImage'][0].buffer);
+              }
+
                 const book = new Books({
                   bookName:BookName,
                   authorName:AuthorName,
                   genre:Genre,         
                   description:Description,
-                  price:Price
+                  price:Price,
+                  bookImage:imageBase64_1
                 })
                 await book.save()
                 res.status(201).send('Book Added')

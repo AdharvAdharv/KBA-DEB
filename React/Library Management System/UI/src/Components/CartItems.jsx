@@ -2,9 +2,16 @@ import React from 'react';
 
 
 const CartItems = ({ book, cartItemId, onRemove, onBuy }) => {
+  
+  const imageSrc = book.bookImage
+  ? (book.bookImage.startsWith('data:image')
+      ? book.bookImage
+      : `data:image/jpeg;base64,${book.bookImage}`)
+  : 'https://via.placeholder.com/350x200?text=No+Image';
+
   return (
     <div className="w-[1000px] h-auto bg-white mx-auto mt-[50px] pt-[30px] pl-[30px] flex">
-      <img className="h-[300px]" src={book.image} alt="Book Cover" />
+      <img className="h-[300px]" src={imageSrc} alt="Book Cover" />
       <div className="h-auto w-[700px] ml-[30px] font-serif">
         <p className="text-3xl font-bold text-center">{book.bookName}</p>
         <p className="font-bold text-xl mt-5">Description</p>

@@ -7,11 +7,18 @@ const cartRouter= Router();
 cartRouter.post('/addtocart', authenticate, async (req, res) => {
   try {
     const { bookId } = req.body;
+    const userId = req.user;
 
     const book = await Books.findById(bookId);
     if (!book) {
       return res.status(404).send('Book not found');
     }
+
+      // 🔍Check if this book is already in the user's cart
+      const existingCartItem = await Cart.findOne({ userId, bookId });
+      if (existingCartItem) {
+        return res.status(409).send('Book already in cart');
+      }
 
     const newCartItem = new Cart({
       userId: req.user,

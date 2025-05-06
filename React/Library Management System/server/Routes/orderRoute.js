@@ -19,7 +19,8 @@ orderRouter.post('/placeorder/:id', authenticate, async (req, res) => {
       userId: req.user,
       bookId: cartItem.bookId._id,
       bookName: cartItem.bookId.bookName,
-      price: cartItem.bookId.price
+      price: cartItem.bookId.price,
+      bookImage: cartItem.bookId.bookImage
     });
 
     await newOrder.save();

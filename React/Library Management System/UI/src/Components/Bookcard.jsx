@@ -14,17 +14,28 @@ const BookCard = ({ book }) => {
         alert('Book added to cart successfully!');
       }
     } catch (error) {
-      console.error('Error adding to cart:', error);
-      alert('Failed to add book to cart');
+      
+        if (error.response?.status === 409) {
+          alert('This book is already in your cart.');
+        } else {
+          console.error('Error adding to cart:', error);
+          alert('Failed to add book to cart');
+        }
     }
   };
+  const imageSrc = book.bookImage
+  ? (book.bookImage.startsWith('data:image')
+ ? book.bookImage
+      : `data:image/jpeg;base64,${book.bookImage}`)
+  : 'https://via.placeholder.com/350x200?text=No+Image';
+
 
   return (
     <div className="bg-white h-auto w-[350px] pt-6 font-serif p-4 rounded-lg ring ring-gray-300 shadow-md">
       {/* Image Section */}
       <img
-        className="mx-auto h-[200px] w-full object-cover rounded"
-        src={book.image   }
+        className="mx-auto h-[400px] w-full object-cover rounded"
+        src={imageSrc}
         alt={book.bookName}
       />
 

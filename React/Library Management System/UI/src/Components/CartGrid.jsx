@@ -35,7 +35,7 @@ const CartGrid = () => {
     navigate(`/buy/${cartItemId}`);
     
   };
-
+     
   return (
     <div>
       {cartItems.length=== 0 ? (

@@ -15,7 +15,8 @@ const Bookdetails= new Schema({
     authorName:{type:String,required:true},
     genre:{type:String,required:true},
     description:{type:String,required:true},
-    price:{type:Number,required:true}
+    price:{type:Number,required:true},
+    bookImage:String,
 },{ timestamps: true })
 const Books = model ('Books',Bookdetails)
 
@@ -34,6 +35,7 @@ const cartSchema = new Schema({
     bookId: { type: mongoose.Schema.Types.ObjectId, ref: 'Books' },
     bookName: String,
     price: Number,
+    bookImage: String,
     orderDate: { type: Date, default: Date.now }
   });
   const Order = model('Order', orderSchema);

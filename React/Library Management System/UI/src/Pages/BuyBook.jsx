@@ -42,13 +42,19 @@ const BuyBook = () => {
     return <div className="text-center mt-10 text-xl">Loading book details...</div>;
   }
 
+  const imageSrc = bookDetails.bookId.bookImage
+  ? (bookDetails.bookId.bookImage.startsWith('data:image')
+      ? bookDetails.bookId.bookImage
+      : `data:image/jpeg;base64,${bookDetails.bookId.bookImage}`)
+  : 'https://via.placeholder.com/350x200?text=No+Image';
+
   return (
     <div className='bg-red-100'>
         <Navbar />|
         <div className='min-h-screen '>
     <div className="  max-w-[800px] mx-auto mt-20 p-10 bg-white rounded-xl shadow-lg">
       <h1 className="text-3xl font-bold text-center mb-8">Buy Book</h1>
-      <img src={bookDetails.bookId.image} alt="Book Cover" className="h-[300px] mx-auto" />
+      <img src={imageSrc} alt="Book Cover" className="h-[300px] mx-auto" />
       <h2 className="text-2xl font-bold text-center mt-5">{bookDetails.bookId.bookName}</h2>
       <p className="mt-4 text-lg text-center">Price: ₹{bookDetails.bookId.price}</p>
       <div className="mt-10 flex justify-center">
